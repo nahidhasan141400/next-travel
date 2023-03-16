@@ -8,7 +8,7 @@ const WhyYCU = () => {
           </h1>
         </div>
         {/* icons  */}
-        <div className="flex relative w-full py-4 justify-between items-center">
+        <div className="flex relative w-full py-4 flex-col md:flex-row  justify-between items-center">
           <div className="relative w-52 h-52 flex justify-center items-center flex-col">
             <img className="w-40 hover:animate-bounce" src="/img/icon/airplane.png" alt="" />
             <p className="text-xl py-3">Experienced</p>

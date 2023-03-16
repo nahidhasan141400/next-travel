@@ -2,7 +2,7 @@ import Logo from "./util/Logo";
 
 const Nav = () => {
   return (
-    <div className="w-full h-20 fixed flex justify-center items-center overflow-hidden">
+    <div className="w-full h-20 fixed flex z-50 justify-center items-center overflow-hidden">
       <div className="max-w-7xl w-full h-full flex-1 relative flex justify-between items-center px-2 py-2">
         <div className="h-full relative">
           <Logo />
