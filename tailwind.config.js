@@ -15,7 +15,11 @@ module.exports = {
      'logoBlue':"#2e3192",
      'logoTag':"#ed1c24"
     },
-    extend: {},
+    extend: {
+      spacing: {
+        '17': '70px',
+      }
+    },
   },
   plugins: [require("daisyui")],
 }

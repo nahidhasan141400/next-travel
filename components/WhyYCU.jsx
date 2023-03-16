@@ -3,8 +3,8 @@ const WhyYCU = () => {
     <div className="w-full relative">
       <div className="w-full max-w-6xl mx-auto ">
         <div>
-          <h1 className="uppercase py-8 w-full text-center text-3xl">
-            WHY CHOOSE DISCOVER Sun Holidays
+          <h1 className="uppercase py-8 w-full text-center font-extrabold text-3xl bg-gradient-to-t from-logoRay to-logoBlue text-transparent bg-clip-text">
+            WHY CHOOSE SUN Holidays
           </h1>
         </div>
         {/* icons  */}

@@ -1,4 +1,6 @@
 import BusnesStat from "../components/BusnesStat";
+import Category from "../components/category";
+import Discount from "../components/Discount";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 import PopulerT from "../components/PopulerT";
@@ -9,10 +11,11 @@ const index = () => {
     <div>
       <Layout>
         <Hero/>
-        {/* <Category/> */}
+        <Category/>
         <PopulerT/>
         <WhyYCU/>
         <BusnesStat/>
+        <Discount/>
       </Layout>
     </div>
   )

@@ -39,10 +39,13 @@
 }
 
 .bg-img1 {
-  background-image: url(../public/img/pic2.jpg);
+  background-image: url(../public/img/pic4.jpg);
   background-size: cover;
 }
 
+.flex-5 {
+  flex: 5;
+}
 .flex-4 {
   flex: 4;
 }
@@ -55,4 +58,27 @@
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
+}
+.bg-img3 {
+  background-image: url(../public/img/pi4.jpg);
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+
+.sw .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.sw .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: auto !important;
+}
+
+.sw .swiper-slide img {
+  display: block;
+  width: 100%;
 }

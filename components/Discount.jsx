@@ -9,17 +9,15 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 
-const PopulerT = () => {
+const Discount = () => {
   return (
-    <div className="w-full h-screen flex justify-center flex-col items-center bg-img1">
-      <div className="w-full text-center flex flex-col justify-center items-center  relative h-full flex-2">
-        <p className="font-2xl text-neutral-700">Take a Look at Our</p>
-        <h1 className="text-4xl font-bold bg-gradient-to-t from-logoRay to-logoBlue text-transparent bg-clip-text">MOST POPULAR TOURS</h1>
-      </div>
-      <div className="w-full flex-4 h-full ">
-        {/* row for slider  */}
-        <div className="w-full sw flex justify-center items-center ">
-          <Swiper
+    <div className='relative w-full h-screen bg-img3'>
+      <div className="max-w-7xl h-full relative mx-auto flex flex-col ">
+            <div className="w-full h-full py-10 mb-3 flex-2 flex justify-center items-center">
+                <p className="font-bold text-3xl md:text-4xl bg-gradient-to-tr from-logoSun to-logoTag text-transparent bg-clip-text">DEALS AND DISCOUNTS</p>
+            </div>
+            <div className="flex-5 h-full sw n">
+            <Swiper
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
@@ -132,10 +130,11 @@ const PopulerT = () => {
               );
             })}
           </Swiper>
-        </div>
+            </div>
       </div>
-    </div>
-  );
-};
 
-export default PopulerT;
+    </div>
+  )
+}
+
+export default Discount

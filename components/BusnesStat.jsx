@@ -1,7 +1,7 @@
 
 const BusnesStat = () => {
   return (
-    <div className='bg-img2  w-full relative'>
+    <div className='bg-img2 pb-8  w-full relative'>
         <div className="relative mx-auto max-w-5xl">
             <div className="w-full p-6 text-3xl text-center mb-3">
                 <h1>SUN HOLIDAYS BUSINESS DEPTH</h1>
