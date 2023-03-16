@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* font-family: 'Kalam', cursive; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fontHand {
+  font-family: "Kalam", cursive;
+}
+.magma {
+  font-family: magmawave;
+}
+
+@font-face {
+  font-family: magmawave;
+  src: url(../public/font/MagmaWave.otf);
+}
+
+.img-con-category {
+  width: 100%;
+  position: relative;
+}
+.img-con-category > div {
+  position: unset !important;
+}
+
+.img-con-category .img {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.bg-img1 {
+  background-image: url(../public/img/pic2.jpg);
+  background-size: cover;
+}
+
+.flex-4 {
+  flex: 4;
+}
+.flex-2 {
+  flex: 2;
+}
+
+.bg-img2 {
+  background-image: url(../public/img/pic3.jpg);
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
