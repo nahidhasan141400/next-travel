@@ -13,7 +13,7 @@ import { Autoplay, Navigation, Pagination } from "swiper";
 
 const Category = () => {
   return (
-    <div className="p-10 max-w-7xl mx-auto">
+    <div className="md:p-10 p-2 max-w-7xl mx-auto">
       <div className="w-full text-center py-4 mb-3">
         <p className="text-2xl">Find a Tour by</p>
         <h1 className="text-5xl font-bold bg-gradient-to-tr to-logoSun from-logoBlue bg-clip-text text-transparent">DESTINATION</h1>
@@ -53,7 +53,7 @@ const Category = () => {
             <SwiperSlide key={i}>
               <div className="w-full flex justify-center items-center">
               <div className="relative m-2 rounded-full">
-                <div className="w-40 h-40 relative flex justify-center items-center rounded-full overflow-hidden bg-logoSun cursor-pointer">
+                <div className="w-24 h-24 md:h-40 md:w-40 relative flex justify-center items-center rounded-full overflow-hidden bg-logoSun cursor-pointer">
                   <div className="img-con- h-full w-full">
                     <Image
                       src={"/img/hero.jpg"}
@@ -63,7 +63,7 @@ const Category = () => {
                       className="img"
                     />
                   </div>
-                  <p className="absolute text-2xl text-logoSun capitalize font-extrabold text">
+                  <p className="absolute text-lg md:text-2xl text-logoSun capitalize font-extrabold text">
                     Cox-Bazar
                   </p>
                 </div>

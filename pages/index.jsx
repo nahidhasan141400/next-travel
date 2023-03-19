@@ -1,3 +1,5 @@
+import AccseesPatner from "../components/AccseesPatner";
+import Affiliate from "../components/Affiliate";
 import BusnesStat from "../components/BusnesStat";
 import Category from "../components/category";
 import Discount from "../components/Discount";
@@ -13,9 +15,11 @@ const index = () => {
         <Hero/>
         <Category/>
         <PopulerT/>
+        <AccseesPatner/>
         <WhyYCU/>
         <BusnesStat/>
         <Discount/>
+        <Affiliate/>  
       </Layout>
     </div>
   )

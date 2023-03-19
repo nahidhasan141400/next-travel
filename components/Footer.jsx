@@ -17,17 +17,17 @@ const Footer = () => {
         </div>
         <div>
           <span className="footer-title">INFORMATION</span>
-          <a className="link link-hover">Press Center</a>
-          <a className="link link-hover">Event</a>
-          <a className="link link-hover">Visa Processing</a>
-          <a className="link link-hover">Travel Tips</a>
+          <a className="link link-hover">Career</a>
+          <a className="link link-hover">Facebook Group</a>
+          <a className="link link-hover">Events</a>
+          <a className="link link-hover">Query</a>
         </div>
        
         <div>
           <span className="footer-title">Legal</span>
-          <a className="link link-hover">Terms of use</a>
+          <a className="link link-hover">Terms & Condition</a>
           <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <a className="link link-hover">Refund policy</a>
         </div>
         <div>
           <span className="footer-title">Legal</span>
