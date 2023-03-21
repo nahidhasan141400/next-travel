@@ -37,7 +37,7 @@ let Items = [
   },
   {
     name: "Contact",
-    src: "/About",
+    src: "/contact",
     icon: HiOutlineMail,
   },
 ];
