@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* font-family: 'Kalam', cursive; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fontHand {
+  font-family: "Kalam", cursive;
+}
+.magma {
+  font-family: magmawave;
+}
+
+@font-face {
+  font-family: magmawave;
+  src: url(../public/font/MagmaWave.otf);
+}
+
+.img-con-category {
+  width: 100%;
+  position: relative;
+}
+.img-con-category > div {
+  position: unset !important;
+}
+
+.img-con-category .img {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.bg-img1 {
+  background-image: url(../public/img/pic4.jpg);
+  background-size: cover;
+}
+
+.flex-5 {
+  flex: 5;
+}
+.flex-4 {
+  flex: 4;
+}
+.flex-2 {
+  flex: 2;
+}
+
+.bg-img2 {
+  background-image: url(../public/img/pic3.jpg);
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+.bg-img3 {
+  background-image: url(../public/img/pi4.jpg);
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+.bg-bd1 {
+  background-image: url(../public/img/bd.jpg);
+  background-color: rgb(133, 91, 91);
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+.sw .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.sw .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: auto !important;
+}
+
+.sw .swiper-slide img {
+  display: block;
+  width: 100%;
+}
