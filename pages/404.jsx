@@ -9,7 +9,7 @@ export default function Custom404() {
               <div className="absolute">
                 <div className="">
                   <h1 className="my-2 text-gray-800 font-bold text-2xl">
-                    The website under development
+                    The website under development.
                   </h1>
                   <p className="my-2 text-gray-800">
                     Sorry about that! Please visit our hompage to get where you
@@ -19,7 +19,7 @@ export default function Custom404() {
                     Take me there!
                   </button>
                 </div>
-              </div>
+              </div> 
               <div>
                 <img src="https://i.ibb.co/G9DC8S0/404-2.png" />
               </div>
