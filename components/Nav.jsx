@@ -40,6 +40,11 @@ let Items = [
     src: "/contact",
     icon: HiOutlineMail,
   },
+  {
+    name: "Own Resort",
+    src: "/resort",
+    icon: GiBackpack,
+  },
 ];
 
 const Nav = () => {
@@ -49,7 +54,7 @@ const Nav = () => {
       <div
         className={`${
           nav ? "h-screen md:h-17" : "h-0"
-        } z-50  w-full backdrop-blur-sm  border-b-1 bg-neutral-50/5 shadow-sm fixed transition-all duration-200 ease-in-out overflow-hidden`}
+        } z-50  w-full backdrop-blur-sm  border-b-1 bg-neutral-800/20 shadow-sm fixed transition-all duration-200 ease-in-out overflow-hidden`}
       >
         <div className=" absolute top-2 right-6 ">
           <button

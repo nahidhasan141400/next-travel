@@ -1,4 +1,6 @@
+import Link from "next/link";
 import Logo from "./util/Logo";
+
 
 const Footer = () => {
   return (
@@ -12,6 +14,13 @@ const Footer = () => {
           Sun Holidays Ltd
             <br />
             <span className="fontHand"> live every day as a holiday</span>
+            {/* location card  */}
+            <div className="w-full flex items-center">
+              <div className="text-neutral-900 font-thin">
+                362/1, Holding 13/1,139, Old-27 New-16, Dhanmondi Dhaka,
+                Bangladesh
+              </div>
+            </div>
          
           </p>
         </div>
@@ -21,6 +30,11 @@ const Footer = () => {
           <a className="link link-hover">Facebook Group</a>
           <a className="link link-hover">Events</a>
           <a className="link link-hover">Query</a>
+          <Link href={"/services"}>
+            <p className="link link-hover">Services</p>
+          </Link>
+          
+          
         </div>
        
         <div>

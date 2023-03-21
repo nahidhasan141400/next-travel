@@ -3,13 +3,19 @@
   display: flex;
   max-width: 1300px;
   margin: auto;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
   .left {
     flex: 3;
     width: 100%;
+    padding: 10px;
   }
   .right {
     flex: 1;
     width: 100%;
-    background-color: red;
+    padding: 5px 10px;
+    position: relative;
+    height: 100%;
   }
 }

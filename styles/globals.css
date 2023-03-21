@@ -73,6 +73,14 @@
   background-position: bottom;
   background-attachment: fixed;
 }
+.bg-bd2 {
+  background-image: url(../public/img/syllet.jpg);
+  background-color: rgba(228, 255, 249, 0.356);
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 .sw .swiper {
   width: 100%;
   padding-top: 50px;
@@ -88,4 +96,22 @@
 .sw .swiper-slide img {
   display: block;
   width: 100%;
+}
+
+.h-129 {
+  height: 500px;
+}
+
+/* //about page BD board of derectory  */
+
+.bdcard .name {
+  transition: all 0.4s linear !important;
+}
+.bdcard .name .ms {
+  display: none;
+  transition: all 0.5s linear;
+}
+
+.bdcard .name:hover > .ms {
+  display: flex;
 }
