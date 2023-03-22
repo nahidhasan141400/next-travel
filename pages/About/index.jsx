@@ -1,29 +1,29 @@
 import React from "react";
+import { BsAward, BsInfoSquare } from "react-icons/bs";
 import { FiMessageSquare } from "react-icons/fi";
 import { GiCaravel, GiConqueror } from "react-icons/gi";
+import { RiTeamLine } from "react-icons/ri";
 import AboutBaner from "../../components/aboutBaner";
 import Layout from "../../components/Layout";
 
-// managing deractor data 
+// managing deractor data
 
 const BD = [
   {
-    name:"Syed Munir Uddin",
-    des:"Chairman",
-    img:"/img/team/persone.jpg",
-    msg:false,
-    magText:"",
+    name: "Syed Munir Uddin",
+    des: "Chairman",
+    img: "/img/team/persone.jpg",
+    msg: false,
+    magText: "",
   },
   {
-    name:"Sayed Zillur Rahman",
-    des:"Vice Chairman",
-    img:"/img/team/persone.jpg",
-    msg:true,
-    magText:"",
-  }
-]
-
-
+    name: "Sayed Zillur Rahman",
+    des: "Vice Chairman",
+    img: "/img/team/persone.jpg",
+    msg: true,
+    magText: "",
+  },
+];
 
 const Index = () => {
   return (
@@ -31,6 +31,15 @@ const Index = () => {
       <Layout>
         <div className="w-full ">
           <AboutBaner i={1} text={"About us"} />
+        </div>
+
+        {/* tabs */}
+        <div className="w-full max-w-5xl mx-auto my-2">
+          <div className="tabs tabs-boxed mx-auto relative flex justify-center">
+            <div className="tab"><RiTeamLine/><span className="px-1"></span> Board of Directors & Team</div>
+            <div className="tab bg-logoRay font-bold text-neutral-900"><BsInfoSquare/><span className="px-1"></span> Who You Are</div>
+            <div className="tab"><BsAward/><span className="px-1"></span> Award & Certificate</div>
+          </div>
         </div>
         <div className="w-full relative">
           {/* about us  */}
@@ -149,10 +158,18 @@ const Index = () => {
                         {e.name}
                       </h1>
                       <p className="text-neutral-600">{e.des}</p>
-                      {
-                        e.msg?(<div className="py-1 px-2 flex items-center cursor-pointer bg-gradient-to-tr from-logoRay to-logoTag rounded-md text-neutral-50 mt-2 hover:to-logoRay hover:from-logoTag ease-in transition-all ms"> <span className="relative pr-1 top-px"> <FiMessageSquare/></span>massage</div>):""
-                      }
-                      
+                      {e.msg ? (
+                        <div className="py-1 px-2 flex items-center cursor-pointer bg-gradient-to-tr from-logoRay to-logoTag rounded-md text-neutral-50 mt-2 hover:to-logoRay hover:from-logoTag ease-in transition-all ms">
+                          {" "}
+                          <span className="relative pr-1 top-px">
+                            {" "}
+                            <FiMessageSquare />
+                          </span>
+                          massage
+                        </div>
+                      ) : (
+                        ""
+                      )}
                     </div>
                   </div>
                 );

@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: magmawave;
-  src: url(../public/font/MagmaWave.otf);
+  src: url(/font/MagmaWave.otf);
 }
 
 .img-con-category {
@@ -39,7 +39,7 @@
 }
 
 .bg-img1 {
-  background-image: url(../public/img/pic4.jpg);
+  background-image: url(/img/pic4.jpg);
   background-size: cover;
 }
 
@@ -54,19 +54,19 @@
 }
 
 .bg-img2 {
-  background-image: url(../public/img/pic3.jpg);
+  background-image: url(/img/pic3.jpg);
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
 }
 .bg-img3 {
-  background-image: url(../public/img/pi4.jpg);
+  background-image: url(/img/pi4.jpg);
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
 }
 .bg-bd1 {
-  background-image: url(../public/img/bd.jpg);
+  background-image: url(/img/bd.jpg);
   background-color: rgb(133, 91, 91);
   background-blend-mode: soft-light;
   background-size: cover;
@@ -74,7 +74,7 @@
   background-attachment: fixed;
 }
 .bg-bd2 {
-  background-image: url(../public/img/syllet.jpg);
+  background-image: url(/img/syllet.jpg);
   background-color: rgba(228, 255, 249, 0.356);
   background-blend-mode: soft-light;
   background-size: cover;
