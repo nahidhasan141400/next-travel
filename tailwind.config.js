@@ -29,6 +29,10 @@ module.exports = {
     extend: {
       spacing: {
         '17': '70px',
+      },
+      transitionDuration: {
+        '0': '0ms',
+        '4000': '4000ms',
       }
     },
   },

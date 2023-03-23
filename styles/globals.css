@@ -115,3 +115,46 @@
 .bdcard .name:hover > .ms {
   display: flex;
 }
+
+.h-screen-100 {
+  height: calc(100vh - 150px);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  color: tomato;
+  border-radius: 10px;
+}
+
+.visalist ol {
+  list-style: decimal;
+}
+.visalist ul {
+  list-style: circle !important;
+}
+
+/* animation  */
+
+@keyframes floater {
+  0% {
+    transform: translateY(-3%);
+  }
+  50% {
+    transform: translateY(3%);
+  }
+  100% {
+    transform: translateY(-3%);
+  }
+}
+
+.nhFloat {
+  transform: translateY(-10%);
+  animation: floater 3s infinite ease-in-out;
+}
+
+.list-sq {
+  list-style: circle;
+}

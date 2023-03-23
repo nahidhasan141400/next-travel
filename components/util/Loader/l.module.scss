@@ -1,12 +1,12 @@
 .main {
   top: 0px;
   position: fixed;
-  height: 2px;
+  height: 1px;
   width: 100%;
   z-index: 300;
 }
 .bar {
-  height: 6px;
+  height: 2px;
   position: relative;
   left: -1%;
   animation: scrol 4s ease-out;
