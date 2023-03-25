@@ -26,13 +26,14 @@ const Footer = () => {
         </div>
         <div>
           <span className="footer-title">INFORMATION</span>
+          <Link href={"/services"}>
+            <div className="link link-hover">Services</div>
+          </Link>
           <a className="link link-hover">Career</a>
           <a className="link link-hover">Facebook Group</a>
           <a className="link link-hover">Events</a>
           <a className="link link-hover">Query</a>
-          <Link href={"/services"}>
-            <div className="link link-hover">Services</div>
-          </Link>
+       
           
           
         </div>
@@ -42,7 +43,10 @@ const Footer = () => {
           <Link href={"/Terms&Condition"}>
             <div className="link link-hover">Terms & Condition</div>
           </Link>
-          <a className="link link-hover">Privacy policy</a>
+        
+          <Link href={"/Privacy"}>
+            <div className="link link-hover">Privacy policy</div>
+          </Link>
           <Link href={"/Refund"}>
             <div className="link link-hover">Refund policy</div>
           </Link>

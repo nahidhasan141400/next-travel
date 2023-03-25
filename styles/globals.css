@@ -10,6 +10,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: #f7fbff;
+}
 
 .fontHand {
   font-family: "Kalam", cursive;

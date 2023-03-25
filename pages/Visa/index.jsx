@@ -19,7 +19,7 @@ const Index = () => {
             molestiae. Sapiente, quod.
           </p>
           <img
-            className="w-72 h-72 absolute object-cover hidden md:inline-block -right-10 -bottom-20 animate-bounce drop-shadow-2xl duration-[4000ms]  ease-in-out"
+            className="w-72 h-72 absolute object-cover hidden md:inline-block -right-10 -bottom-20 nhFloat"
             src="/img/icon/airplane.png"
             alt=""
           />
