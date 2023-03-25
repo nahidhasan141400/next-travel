@@ -32,7 +32,9 @@ const Footer = () => {
           <a className="link link-hover">Career</a>
           <a className="link link-hover">Facebook Group</a>
           <a className="link link-hover">Events</a>
-          <a className="link link-hover">Query</a>
+          <Link href={"/Query"}>
+            <div className="link link-hover">Query</div>
+          </Link>
        
           
           

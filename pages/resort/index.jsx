@@ -18,14 +18,15 @@ const Index = () => {
         {/* description  */}
         <div className="text-center font-light">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            itaque vel, illum voluptates aliquid fugit laborum, odit illo quasi
-            dolorum quas quia doloremque optio. Recusandae eius dolorem
-            accusantium maiores officiis!
+          <p>Sailor Moon Resorts, Saint Martin is situated at West Sea-Beach Konarpara, Saint Martin, Cox&#39;s Bazar, Bangladesh. We own this resort since 2022. Sailor Moon Resorts one of the finest resort in Saint Martin. With the varity of services Sailor Moon Resort try to provide the best value for money service to there customer. 100% Customer Satisfactory obtaining is our main goal.&nbsp;</p>
+
           </p>
         </div>
         {/* b photo  */}
         <div>
+          <div>
+            
+          </div>
           <img src="/img/sailor/sunholiday-w.jpg" alt="" />
         </div>
 
@@ -230,6 +231,119 @@ const Index = () => {
                   alt=""
                 />
               </div>
+            </div>
+          </div>
+        </div>
+        {/* pricing  */}
+        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+          <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-logoRay sm:text-4xl md:mx-auto">
+              <span className="relative inline-block">
+                <svg
+                  viewBox="0 0 52 24"
+                  fill="currentColor"
+                  className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+                >
+                  <defs>
+                    <pattern
+                      id="7e5e8ff8-1960-4094-a63a-2a0c0f922d69"
+                      x="0"
+                      y="0"
+                      width=".135"
+                      height=".30"
+                    >
+                      <circle cx="1" cy="1" r=".7" />
+                    </pattern>
+                  </defs>
+                  <rect
+                    fill="url(#7e5e8ff8-1960-4094-a63a-2a0c0f922d69)"
+                    width="52"
+                    height="24"
+                  />
+                </svg>
+                <span className="relative">Pricing</span>
+              </span>{" "}
+            </h2>
+            <p className="text-base text-gray-700 md:text-lg">
+              We Provide the best price in Seint-martin
+            </p>
+          </div>
+          <div className="grid max-w-md gap-10 row-gap-5 lg:max-w-screen-lg sm:row-gap-10 lg:grid-cols-3 xl:max-w-screen-lg sm:mx-auto">
+            <div className="flex flex-col justify-between p-8 transition-shadow duration-300 bg-white border rounded shadow-sm sm:items-center hover:shadow">
+              <div className="text-center">
+                <div className="text-lg font-semibold">Couple Room</div>
+                <div className="flex items-center justify-center mt-2">
+                  <div className="mr-1 text-5xl font-bold">4,000</div>
+                  <div className="text-gray-700"> tk/Day</div>
+                </div>
+                <div className="mt-2 space-y-3">
+                  <div className="text-gray-700">Couple Bed</div>
+                  <div className="text-gray-700">For 2 Persone</div>
+                  <div className="text-gray-700">Complimentory BreakFast</div>
+                </div>
+              </div>
+              <div>
+                <a className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
+                  Book Now
+                </a>
+                <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
+                  Check-in at 12:00 PM | Chaeck-out at 11:00 AM
+                </p>
+              </div>
+            </div>
+            <div className="relative flex flex-col justify-between p-8 transition-shadow duration-300 bg-white border rounded shadow-sm sm:items-center hover:shadow border-deep-purple-accent-400">
+              <div className="absolute inset-x-0 top-0 flex justify-center -mt-3">
+                <div className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-white uppercase rounded bg-logoSun">
+                  Most Popular
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-semibold">Double Room</div>
+                <div className="flex items-center justify-center mt-2">
+                  <div className="mr-1 text-5xl font-bold">5,000</div>
+                  <div className="text-gray-700"> tk/Day</div>
+                </div>
+                <div className="mt-2 space-y-3">
+                  <div className="text-gray-700">Two (02) Bed</div>
+                  <div className="text-gray-700">For 4 Persone</div>
+                  <div className="text-gray-700">Complimentory BreakFast</div>
+                </div>
+              </div>
+              <div>
+                <a className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
+                  Book Now
+                </a>
+                <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
+                  Check-in at 12:00 PM | Chaeck-out at 11:00 AM
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col justify-between p-8 transition-shadow duration-300 bg-white border rounded shadow-sm sm:items-center hover:shadow">
+              <div className="text-center">
+                <div className="text-lg font-semibold">Full Resort</div>
+                <div className="flex items-center justify-center mt-2">
+                  <div className="mr-1 text-5xl font-bold">35,000</div>
+                  <div className="text-gray-700"> tk/Day</div>
+                </div>
+                <div className="mt-2 space-y-3">
+                  <div className="text-gray-700">Three Couple Bed</div>
+                  <div className="text-gray-700">Seven Double Bed</div>
+                  <div className="text-gray-700">For 34 Persone</div>
+                  <div className="text-gray-700">Complimentory BreakFast</div>
+                </div>
+              </div>
+              <div>
+                <a className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
+                  Book Now
+                </a>
+                <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
+                  Check-in at 12:00 PM | Chaeck-out at 11:00 AM
+                </p>
+              </div>
+            </div>
+            {/* condi */}
+            <div className="text-base font-light relative -top-10 text-logoSun">
+              <p>*condition apply</p>
             </div>
           </div>
         </div>
