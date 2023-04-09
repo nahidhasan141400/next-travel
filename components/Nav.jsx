@@ -74,7 +74,7 @@ const Nav = () => {
               return (
                 <li key={i}>
                   <Link href={e.src}>
-                    <p className="flex m-2 items-center transition-all duration-1000  text-sm ease-in-out py-2 bg-cyan-200/20 px-4  capitalize rounded-md text-neutral-50 hover:text-logoBlue shadow-lg ">
+                    <p className="flex m-2 items-center transition-all duration-1000  text-sm ease-in-out py-2 bg-cyan-200/20 px-4  capitalize rounded-md text-logoSun hover:text-logoBlue shadow-lg ">
                       <span className="text-md mr-1">
                         <e.icon />
                       </span>

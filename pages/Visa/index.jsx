@@ -1,16 +1,19 @@
 import React from "react";
-import Layout from "../../components/Layout";
 import Data from "../../Data/visa";
+import Layout from "../../components/Layout";
 
 const Index = () => {
     const [ show,setShow ] = React.useState();
     
   return (
     <Layout>
+      
       <div className="w-full pt-24 pb-10 relative">
-        <div className="relative flex flex-col justify-center p-10 md:w-full h-72 bg-gradient-to-tr from-logoRay/40 to-logoSun max-w-6xl md:mx-auto rounded-2xl overflow-hidden lg:overflow-visible -z-10 mx-2">
+        
+        <div className="relative flex flex-col justify-center p-10 md:w-full h-72 bg-gradient-to-tr from-logoRay/40 to-logoSun max-w-6xl md:mx-auto rounded-2xl overflow-hidden lg:overflow-visible mx-2">
+          
           <h1 className="md:text-3xl text-xl font-bold">
-            We Provide The Best Visa Assistance
+            We Provide The Best Visa Assistance 
           </h1>
           <p className="w-4/6 pt-2 md:text-lg text-sm font-thin">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum qui

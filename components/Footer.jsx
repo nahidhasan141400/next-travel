@@ -1,106 +1,142 @@
 import Link from "next/link";
+import { AiFillLinkedin, AiFillYoutube, AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
+import { FaFacebookF } from "react-icons/fa";
+import { FiMapPin } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
+import { IoMdCall } from "react-icons/io";
+import { MdOutlineArrowRight } from "react-icons/md";
 import Logo from "./util/Logo";
-
 
 const Footer = () => {
   return (
     <footer>
       <div className="footer p-10 bg-base-200 text-base-content">
         <div>
-          <div className="h-20">
-            <Logo/>
+          <div className="h-52">
+            <Logo />
           </div>
-          <p>
-          Sun Holidays Ltd
+          <p className="text-center">
+            <span className="text-3xl font-bold">Sun Holidays Ltd</span>
             <br />
             <span className="fontHand"> live every day as a holiday</span>
             {/* location card  */}
             <div className="w-full flex items-center">
-              <div className="text-neutral-900 font-thin">
-                362/1, Holding 13/1,139, Old-27 New-16, Dhanmondi Dhaka,
-                Bangladesh
-              </div>
+             
             </div>
-         
           </p>
         </div>
         <div>
-          <span className="footer-title">INFORMATION</span>
-          <Link href={"/services"}>
-            <div className="link link-hover">Services</div>
-          </Link>
-          <a className="link link-hover">Career</a>
-          <a className="link link-hover">Facebook Group</a>
-          <a className="link link-hover">Events</a>
-          <Link href={"/Query"}>
-            <div className="link link-hover">Query</div>
-          </Link>
-       
-          
-          
+          <span className="footer-title capitalize text-3xl">Contact</span>
+          <p>
+            Give our clients assured services that go above <br /> and beyond
+            their expectations to make their <br /> travels unforgettable and
+            pleasurable.
+          </p>
+          <div className="text-neutral-900 flex">
+               <span className="relative top-1 pr-1"><FiMapPin/></span> 362/1, Holding 13/1(2nd Flor), Old-27 New-16
+                <br />
+                Dhanmondi Dhaka-1209, Bangladesh.
+              </div>
+          <a href="mailto:info@sunholidaysltd.com" className="flex bg-gradient-to-tr from-logoBlue to-logoSun bg-clip-text hover:text-transparent">
+            <span className="text-logoBlue relative top-1 pr-1">
+              <HiOutlineMail />
+            </span>
+            info@sunholidaysltd.com
+          </a>
+          <a href="mailto:sunholidays07@gmail.com" className="flex bg-gradient-to-tr from-logoBlue to-logoSun bg-clip-text hover:text-transparent">
+            <span className="text-logoBlue relative top-1 pr-1">
+              <HiOutlineMail />
+            </span>
+            sunholidays07@gmail.com
+          </a>
+          <a href="tel:+8802222243452" className="flex bg-gradient-to-tr from-logoBlue to-logoSun bg-clip-text hover:text-transparent">
+            <span className="text-logoBlue relative top-1 pr-1">
+              <IoMdCall />
+            </span>{" "}
+            +88 02 2222 43452
+          </a>
+          <a href="tel:8801873838301" className="flex font-bold bg-gradient-to-tr from-logoBlue to-logoSun bg-clip-text hover:text-transparent text-2xl">
+            <span className="text-logoBlue relative top-1 pr-1">
+              <IoMdCall />
+            </span>{" "}
+            +88 018 73 83 83 01
+          </a>
         </div>
-       
         <div>
-          <span className="footer-title">Legal</span>
-          <Link href={"/Terms&Condition"}>
-            <div className="link link-hover">Terms & Condition</div>
+          <span className="footer-title capitalize text-3xl">Information</span>
+          <Link href={"/services"}>
+            <div className="link flex link-hover"><span className="text-xl"><MdOutlineArrowRight/></span> Services</div>
           </Link>
-        
+          <Link href={"/Career"}>
+            <div className="link link-hover flex"><span className="text-xl"><MdOutlineArrowRight/></span> Career</div>
+          </Link>
+
+          <a className="link link-hover flex"><span className="text-xl"><MdOutlineArrowRight/></span> Facebook Group</a>
+          <a className="link link-hover flex"> <span className="text-xl"><MdOutlineArrowRight/></span> Events</a>
+          <Link href={"/Query"}>
+            <div className="link link-hover flex"> <span className="text-xl"><MdOutlineArrowRight/></span> Query</div>
+          </Link>
+        </div>
+
+        <div>
+          <span className="footer-title capitalize text-3xl">Legal</span>
+          <Link href={"/Terms&Condition"}>
+            <div className="link link-hover flex"> <span className="text-xl"><MdOutlineArrowRight/></span> Terms & Condition</div>
+          </Link>
+
           <Link href={"/Privacy"}>
-            <div className="link link-hover">Privacy policy</div>
+            <div className="link link-hover flex"><span className="text-xl"><MdOutlineArrowRight/></span> Privacy policy</div>
           </Link>
           <Link href={"/Refund"}>
-            <div className="link link-hover">Refund policy</div>
+            <div className="link link-hover flex"><span className="text-xl"><MdOutlineArrowRight/></span> Refund policy</div>
           </Link>
           <Link href={"/BillingAndPaymentMethodology"}>
-            <div className="link link-hover">Billing and payment methodology</div>
+            <div className="link link-hover flex">
+            <span className="text-xl"><MdOutlineArrowRight/></span> Billing and payment methodology
+            </div>
           </Link>
         </div>
+        {/* news  */}
         <div>
-          <span className="footer-title">Legal</span>
-         
+        <span className="footer-title capitalize text-3xl ">Get Update</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">To Get Our Spicial Deals!</span>
+            </label>
+            <label className="input-group">
+              <span>Email</span>
+              <input
+                type="text"
+                placeholder="yourmail@example.com"
+                className="input input-bordered"
+              />
+            </label>
+          </div>
+          <button className="rounded-md bg-gradient-to-tr to-logoBlue from-logoRay py-2 mt-2 px-8 text-neutral-50 font-bold text-xl btn border-none hover:scale-95">Submit</button>
         </div>
       </div>
       <div className="footer items-center p-4 bg-gradient-to-r from-logoSun to-logoBlue text-neutral-content">
         <div className="items-center grid-flow-col">
-        <div className="h-10">
-            <Logo/>
+          <div className="h-10">
+            <Logo />
           </div>
           <p>Copyright © 2023 - All right reserved</p>
         </div>
-        <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-            </svg>
+        <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end text-2xl">
+          <a className="hover:scale-110" href=""> 
+          <AiOutlineInstagram/>
           </a>
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-            </svg>
+        <a className="hover:scale-110">
+         <AiFillLinkedin/>
           </a>
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-            </svg>
+          <a className="hover:scale-110">
+         <AiOutlineTwitter/>
+          </a>
+          <a className="hover:scale-110">
+           <AiFillYoutube/>
+          </a>
+          <a className="hover:scale-110" href="https://www.facebook.com/sunholidaysltd" target="_blank" rel="noreferrer">
+           <FaFacebookF/>
           </a>
         </div>
       </div>
