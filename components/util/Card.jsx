@@ -1,16 +1,17 @@
+import Link from "next/link";
 import React from "react";
 import { BiTime } from "react-icons/bi";
 
 const Card = () => {
   return (
     <div className="w-full max-w-sm bg-neutral-50 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden m-3">
-      <a href="#">
+      <Link href="/Tour/1234">
         <img
           className=" hover:scale-105 ease-out transition-all rounded-t-lg"
           src="/img/pic1.jpg"
           alt="product image"
         />
-      </a>
+      </Link>
       <div className="px-5 pb-5">
         <a href="#">
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">

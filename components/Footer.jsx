@@ -117,7 +117,7 @@ const Footer = () => {
       </div>
       <div className="footer items-center p-4 bg-gradient-to-r from-logoSun to-logoBlue text-neutral-content">
         <div className="items-center grid-flow-col">
-          <div className="h-10">
+          <div style={{filter: "drop-shadow(0px 0px 1px )"}} className="h-10">
             <Logo />
           </div>
           <p>Copyright © 2023 - All right reserved</p>
