@@ -55,6 +55,7 @@ const tour = `CREATE TABLE ${DB}. tour (
         meta TEXT(1000)  NULL , 
         types TEXT(1000)  NULL ,
         catagory TEXT(1000)  NULL ,
+        future INT(200)  NULL ,
         created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id))
         ENGINE = InnoDB;`;
