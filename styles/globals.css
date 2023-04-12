@@ -174,3 +174,16 @@ body {
 .min-w-52 {
   min-width: 13rem;
 }
+
+ol {
+  list-style: decimal;
+  list-style-position: inside;
+}
+ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+
+.jodit-status-bar-link {
+  display: none;
+}
