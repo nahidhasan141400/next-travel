@@ -53,7 +53,7 @@ export default async function handler(req, res) {
       const DataBase = await DBcon();
       const { connection } = DataBase;
       const [datafromDB] = await connection.execute(
-        `INSERT INTO tour (id, name, titel, log, img, details, status, price, fromlink, tag, meta, created) VALUES (NULL, '${name}', '${titel}', 'start', '${photo}', '${description}', '1', '${price}', '${fromLink}', '${JSON.stringify(tag)}', '${seoDes}', current_timestamp());`
+        `INSERT INTO tour (id, name, titel, log, img, details, status, price, fromlink, tag, meta,types,catagory,future, created) VALUES (NULL, '${name}', '${titel}', 'start', '${photo}', '${description}', '1', '${price}', '${fromLink}', '${JSON.stringify(tag)}', '${seoDes}','${type}','${catagory}','0', current_timestamp());`
       );
       connection.end();
       res.send({ msg: "ok", datafromDB });

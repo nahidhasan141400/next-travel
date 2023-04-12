@@ -1,10 +1,11 @@
-import Router from 'next/router';
-import React from 'react';
-import Nav from "../../../components/admin/Nav";
-import Table from '../../../components/util/table/Table';
-import DBcon from '../../../database/connection';
-
+import axios from "axios";
 import jwt from "jsonwebtoken";
+import Router from "next/router";
+import React from "react";
+import Url from "../../../components/ImgApi";
+import Nav from "../../../components/admin/Nav";
+import Table from "../../../components/util/table/Table";
+import DBcon from "../../../database/connection";
 const colunm = [
   {
     Header: "ID",
@@ -16,22 +17,30 @@ const colunm = [
   },
   {
     Header: "Photo",
-    accessor: "photo",
-    Cell:(prop)=>{
-      return ( <div className="h-16 relative"><img className="h-full" src={`${Url}${JSON.parse(prop.row.original.photo)[0]}`} alt="" /></div>)
-    }
+    accessor: "img",
+    Cell: (prop) => {
+      return (
+        <div className="h-16 relative">
+          <img
+            className="h-full"
+            src={`${Url}/upload/${JSON.parse(prop.row.original.img)[0]}`}
+            alt=""
+          />
+        </div>
+      );
+    },
   },
   {
-    Header: "Sale",
-    accessor: "sels",
+    Header: "Catagory",
+    accessor:"catagory"
   },
   {
-    Header: "Stock",
-    accessor: "stock",
+    Header: "Types",
+    accessor:"types"
   },
   {
     Header: "Price",
-    accessor: "B2C",
+    accessor: "price",
   },
 
   {
@@ -60,46 +69,60 @@ const colunm = [
     },
   },
 ];
-const data =[];
-const Index = ({user}) => {
+const Index = ({ user }) => {
+  const [data, setData] = React.useState([]);
+  React.useEffect((e) => {
+    const get = async () => {
+      try {
+        const serverres = await axios("/api/v1.0/tour");
+        setData(serverres.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    get()
+  }, []);
   return (
-    <div className='w-full relative'>
-      <Nav/>
+    <div className="w-full relative">
+      <Nav />
       <div className="w-full shadow-md p-10 bg-gradient-to-bl from-logoBlue/10 to-logoBlue/40">
-        <div className='w-full relative flex justify-between items-center'>
-              <div className=''>
-                    <h1 className='text-logoBlue font-bold text-2xl'>Welcome {user.user}</h1>
-              </div>
-              <div>
-              <button 
-              onClick={()=>{
+        <div className="w-full relative flex justify-between items-center">
+          <div className="">
+            <h1 className="text-logoBlue font-bold text-2xl">
+              Welcome {user.user}
+            </h1>
+          </div>
+          <div>
+            <button
+              onClick={() => {
                 Router.push("/Welcome/Admin/addTour");
               }}
-              className="btn btn-outline btn-secondary">Add new Tour</button>
-              </div>
+              className="btn btn-outline btn-secondary"
+            >
+              Add new Tour
+            </button>
+          </div>
         </div>
       </div>
-      <div className='w-full p-10 '>
-
-      <Table datas={data} colunm={colunm} />
+      <div className="w-full p-10 ">
+        <Table datas={data} colunm={colunm} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Index
-
+export default Index;
 
 export const getServerSideProps = async (ctx) => {
   let { sort } = ctx.req.cookies;
-  
+
   let err = null;
   let Props = {
     user: null,
   };
   try {
     var decoded = jwt.verify(sort, process.env.JWTT);
-   
+
     try {
       const DataBase = await DBcon();
       const { connection } = DataBase;
