@@ -1,3 +1,4 @@
+import Router from 'next/router';
 import React from 'react';
 import Nav from "../../../components/admin/Nav";
 import Table from '../../../components/util/table/Table';
@@ -70,7 +71,11 @@ const Index = ({user}) => {
                     <h1 className='text-logoBlue font-bold text-2xl'>Welcome {user.user}</h1>
               </div>
               <div>
-              <button className="btn btn-outline btn-secondary">Add new Tour</button>
+              <button 
+              onClick={()=>{
+                Router.push("/Welcome/Admin/addTour");
+              }}
+              className="btn btn-outline btn-secondary">Add new Tour</button>
               </div>
         </div>
       </div>

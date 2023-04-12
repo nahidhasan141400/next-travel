@@ -1,2 +1,5 @@
 INSERT INTO `admin` (`id`, `name`, `user`, `email`, `password`, `session`, `status`, `phone`, `img`, `role`, `job`) VALUES (NULL, 'Nahid Hasan', 'nahid@admin.com', 'nahidhasan141400@gmail.com', '$2b$10$pk8JIeNPyFizJ4PKPnP2EuNSe681MSCZzbx2Ve4qqgnu5duh.9Sj6', '00000000000000000000', '1', '8801741013363', 'nophoto.png', '1', '10');
 
+
+
+INSERT INTO `tour` (`id`, `name`, `titel`, `log`, `img`, `details`, `status`, `price`, `fromlink`, `tag`, `meta`, `created`) VALUES (NULL, 'nAME', 'titel', 'log', 'img', 'details', '1', 'price', 'from link', 'tags', 'meta', current_timestamp());
