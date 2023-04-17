@@ -187,3 +187,17 @@ ul {
 .jodit-status-bar-link {
   display: none;
 }
+
+.nav ul,
+ol {
+  list-style: none;
+}
+
+.dynamic table {
+  width: 100%;
+  overflow: auto;
+}
+
+.herotitel {
+  text-shadow: 0 0 0.1px #fff;
+}

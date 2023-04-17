@@ -93,6 +93,14 @@ const Index = ({ user }) => {
             </h1>
           </div>
           <div>
+          <button
+              onClick={() => {
+                Router.push("/Welcome/Admin/setpopuler");
+              }}
+              className="btn mr-4 btn-outline btn-secondary"
+            >
+              Setup populer
+            </button>
             <button
               onClick={() => {
                 Router.push("/Welcome/Admin/addTour");

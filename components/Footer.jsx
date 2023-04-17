@@ -32,11 +32,14 @@ const Footer = () => {
             their expectations to make their <br /> travels unforgettable and
             pleasurable.
           </p>
+            <Link href={'/contact#map'}>
           <div className="text-neutral-900 flex">
-               <span className="relative top-1 pr-1"><FiMapPin/></span> 362/1, Holding 13/1(2nd Flor), Old-27 New-16
+            <span className="relative top-1 pr-1"><FiMapPin/></span> 362/1, Holding 13/1(2nd Flor), Old-27 New-16
                 <br />
                 Dhanmondi Dhaka-1209, Bangladesh.
+               
               </div>
+            </Link>
           <a href="mailto:info@sunholidaysltd.com" className="flex bg-gradient-to-tr from-logoBlue to-logoSun bg-clip-text hover:text-transparent">
             <span className="text-logoBlue relative top-1 pr-1">
               <HiOutlineMail />

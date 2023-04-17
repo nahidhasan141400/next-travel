@@ -15,6 +15,11 @@ let Items = [
     icon: AiOutlineHome,
   },
   {
+    name: "About Us",
+    src: "/About",
+    icon: TbListDetails,
+  },
+  {
     name: "Visa",
     src: "/Visa",
     icon: ImProfile,
@@ -28,12 +33,6 @@ let Items = [
     name: "Tour",
     src: "/Tour",
     icon: GiBackpack,
-  },
-  
-  {
-    name: "About Us",
-    src: "/About",
-    icon: TbListDetails,
   },
   {
     name: "Contact",
@@ -50,7 +49,7 @@ let Items = [
 const Nav = () => {
   const [nav, setNav] = useState(false);
   return (
-    <div>
+    <div className="nav">
       <div
         className={`${
           nav ? "h-screen md:h-17" : "h-0"

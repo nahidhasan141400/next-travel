@@ -1,8 +1,8 @@
 import React from "react";
 import { BsTelephone } from "react-icons/bs";
 import { MdOutlineMailOutline } from "react-icons/md";
-import AboutBaner from "../../components/aboutBaner";
 import Layout from "../../components/Layout";
+import AboutBaner from "../../components/aboutBaner";
 import style from "./style.module.scss";
 
 const index = () => {
@@ -102,7 +102,7 @@ const index = () => {
           </div> */}
           {/* loacation  */}
           <div className="w-full relative mt-8 md:pr-10">
-            <div className="py-2"></div>
+            <div className="py-2" id="map"></div>
 
             
 

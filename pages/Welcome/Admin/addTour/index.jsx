@@ -34,6 +34,7 @@ const Index = () => {
   const [type,setType] = useState();
   const [catagory,setCatagory] = useState();
   const [tag,setTag] = useState();
+  const [dur,setdur] = useState();
   // photo 
   const [img1,setImg1] = useState();
   const [img2,setImg2] = useState();
@@ -80,6 +81,7 @@ const Index = () => {
           catagory,
           tag,
           description,
+          dur,
           photo:JSON.stringify(photodata.map((e)=>{
             return e.filename
           }))
@@ -216,6 +218,19 @@ const Index = () => {
               <option value="family" >Family Tour</option>
               <option value="corporate" >Corporate Tour</option>
             </select>
+            </div>
+            <div className="flex-1 flex justify-center">
+            <input
+              value={dur}
+              onChange={(e)=>{
+                setdur(e.target.value)
+              }}
+                type="text"
+                 required
+                  placeholder="Tour Duration"
+              
+                className="input input-bordered w-11/12 mx-auto"
+              />
             </div>
             
           </div>

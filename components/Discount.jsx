@@ -21,7 +21,7 @@ const Discount = () => {
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
-            loop={true}
+            // loop={true}
             slidesPerView={"auto"}
             coverflowEffect={{
               rotate: 50,
@@ -34,7 +34,10 @@ const Discount = () => {
               delay: 2500,
               disableOnInteraction: false,
             }}
-            pagination={true}
+            navigation={true}
+            pagination={{
+              clickable: true
+            }}
             modules={[EffectCoverflow,Autoplay, Pagination]}
             className="mySwiper"
           >

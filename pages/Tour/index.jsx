@@ -1,8 +1,23 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import Card from "../../components/util/Card";
 
 const Index = () => {
+
+  const [data,Setdata] = useState([])
+useEffect(()=>{
+  const getData = async ()=>{
+    try {
+      const serverRes = await axios("/api/v1.0/tour");
+// console.log(serverRes.data);
+      Setdata(serverRes.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  getData()
+},[])
   return (
     <Layout>
       <section className="bg-white pt-20">
@@ -60,10 +75,17 @@ const Index = () => {
       </section>
       {/* card row  */}
       <section className="w-full px-3 max-w-7xl flex justify-between flex-wrap mx-auto">
+        {/* <Card />
         <Card />
         <Card />
-        <Card />
-        <Card />
+        <Card /> */}
+         {
+          data.filter((x)=>(x.catagory == "package")).map((e,i)=>{
+            return (
+              <Card key={i} data={e}/>
+            )
+          })
+        }
       </section>
       {/*  Package Tour end  */}
       {/*  Group Tour start  */}
@@ -81,9 +103,15 @@ const Index = () => {
       </section>
       {/* card row  */}
       <section className="w-full px-3 max-w-7xl flex justify-between flex-wrap mx-auto">
-        <Card />
-        <Card />
-        <Card />
+        {
+          data.filter((x)=>(x.catagory == "group")).map((e,i)=>{
+            return (
+              <Card key={i} data={e}/>
+            )
+          })
+        }
+     
+        
       </section>
       {/*  Group Tour end  */}
       {/*  Family Tour start  */}
@@ -101,9 +129,16 @@ const Index = () => {
       </section>
       {/* card row  */}
       <section className="w-full px-3 max-w-7xl flex justify-between flex-wrap mx-auto">
+        {/* <Card />
         <Card />
-        <Card />
-        <Card />
+        <Card /> */}
+         {
+          data.filter((x)=>(x.catagory == "family")).map((e,i)=>{
+            return (
+              <Card key={i} data={e}/>
+            )
+          })
+        }
       </section>
       {/*  Family Tour end  */}
       {/*  Corporate Tour start  */}
@@ -121,9 +156,16 @@ const Index = () => {
       </section>
       {/* card row  */}
       <section className="w-full px-3 max-w-7xl flex justify-between flex-wrap mx-auto">
+        {/* <Card />
         <Card />
-        <Card />
-        <Card />
+        <Card /> */}
+           {
+          data.filter((x)=>(x.catagory == "corporate")).map((e,i)=>{
+            return (
+              <Card key={i} data={e}/>
+            )
+          })
+        }
       </section>
       {/*  Corporate Tour end  */}
       {/* news later  */}

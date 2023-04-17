@@ -56,12 +56,20 @@ const tour = `CREATE TABLE ${DB}. tour (
         types TEXT(1000)  NULL ,
         catagory TEXT(1000)  NULL ,
         future INT(200)  NULL ,
+        dur TEXT(9000) NOT NULL,
         created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id))
         ENGINE = InnoDB;`;
 
+        const populer = `CREATE TABLE ${DB}. populer (
+          id INT NOT NULL AUTO_INCREMENT UNIQUE, 
+          data TEXT(1000) NOT NULL ,
+          created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+          PRIMARY KEY (id))
+          ENGINE = InnoDB;`;
+
 // modal register heare
-const moduls = [admin,tour];
+const moduls = [admin,tour,populer];
 
 const mygrate = async (query) => {
   const rescon = await connectionDB();
