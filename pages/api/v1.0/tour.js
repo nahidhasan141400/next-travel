@@ -34,7 +34,6 @@ export default async function handler(req, res) {
         `SELECT * FROM admin WHERE email="${cart.email}"`
       );
       connection.end();
-      console.log(data);
       if (data.length !== 0) {
             if (!data[0].status) {
             res.status(500);
