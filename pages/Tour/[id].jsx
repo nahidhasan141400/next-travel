@@ -125,7 +125,7 @@ useEffect(()=>{
 
                 className="dynamic"
                 dangerouslySetInnerHTML={{
-                  __html: data ? data.details : "data is loading ....",
+                  __html: data ? atob(data.details) : "data is loading ....",
                 }}
               ></div>
             </div>

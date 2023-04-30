@@ -80,7 +80,7 @@ const Index = () => {
           type,
           catagory,
           tag,
-          description,
+          description: btoa(description),
           dur,
           photo:JSON.stringify(photodata.map((e)=>{
             return e.filename

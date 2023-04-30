@@ -34,25 +34,25 @@ useEffect(()=>{
           <div className="flex flex-wrap -m-4 text-center">
             <div className="p-4 sm:w-1/4 w-1/2">
               <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-                4
+              {data.filter((e)=>(e.catagory === "package")).length}
               </h2>
               <p className="leading-relaxed">Package Tour</p>
             </div>
             <div className="p-4 sm:w-1/4 w-1/2">
               <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-                5
+              {data.filter((e)=>(e.catagory === "group")).length}
               </h2>
               <p className="leading-relaxed">Group Tour</p>
             </div>
             <div className="p-4 sm:w-1/4 w-1/2">
               <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-                10
+              {data.filter((e)=>(e.catagory === "family")).length}
               </h2>
               <p className="leading-relaxed">Family Tour</p>
             </div>
             <div className="p-4 sm:w-1/4 w-1/2">
               <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-                5
+              {data.filter((e)=>(e.catagory === "corporate")).length}
               </h2>
               <p className="leading-relaxed">Corporate Tour</p>
             </div>

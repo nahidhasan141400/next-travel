@@ -19,7 +19,7 @@ const BusnesStat = () => {
                     </div>
                     <div className="flex flex-col justify-center items-center">
                         <img className="w-36" src="/img/icon/work.png" alt="sun" />
-                        <p className="text-logoSun font-bold text-6xl">8</p>
+                        <p className="text-logoSun font-bold text-6xl">13</p>
                         <p className="text-xl">YEARS OF EXPERIENCE</p>
                     </div>
                     <div className="flex flex-col justify-center items-center">

@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   if (method === "POST") {
     try {
       const { email,password } = req.body;
-     
+     console.log(req.body)
       const DataBase = await DBcon();
       const { connection } = DataBase;
       const [userInDb] = await connection.execute(
