@@ -1,11 +1,41 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { BsTelephone } from "react-icons/bs";
 import { MdOutlineMailOutline } from "react-icons/md";
+import { toast } from "react-toastify";
+import Url from "../../components/ImgApi";
 import Layout from "../../components/Layout";
 import AboutBaner from "../../components/aboutBaner";
 import style from "./style.module.scss";
 
-const index = () => {
+
+const Index = () => {
+  const [email,SetEmail] = useState();
+  const [phone,SetPhone] = useState();
+  const [Name,SetName] = useState();
+  const [msg,Setmsg] = useState();
+
+  const SubmitForm = async (e)=>{
+    e.preventDefault()
+    try {
+      toast.promise(
+        axios.post(`${Url}/mailto`,{
+          website:"sunholidaysltd.com",
+          name:Name,
+          phone,
+          mail:email,
+          msg
+        })
+        ,{
+          pending:"sending ..",
+          error:"Ops Something is Wrong !",
+          success:"Thanks for your text "
+        }
+      )
+    } catch (error) {
+     console.log(error); 
+    }
+  }
   return (
     <Layout>
       <AboutBaner i={2} text={"Contact Us"} />
@@ -33,17 +63,18 @@ const index = () => {
                 </a>
                 </div>
 
-              <form action="https://api.web3forms.com/submit" className="mt-10">
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="YOUR_ACCESS_KEY_HERE"
-                />
+              <form 
+              onSubmit={(e)=>SubmitForm(e)}
+              className="mt-10">
+                
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="relative z-0 col-span-2 md:col-span-1">
                     <input
+                      onChange={(e)=>{SetPhone(e.target.value)}}
+                      value={phone}
                       type="text"
                       name="name"
+                      required
                       className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
                       placeholder=" "
                     />
@@ -53,8 +84,13 @@ const index = () => {
                   </div>
                   <div className="relative z-0 col-span-2 md:col-span-1">
                     <input
-                      type="text"
+                      type="email"
                       name="number"
+                      required
+                      onChange={(e)=>{
+                        SetEmail(e.target.value)
+                      }}
+                      value={email}
                       className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
                       placeholder=" "
                     />
@@ -64,22 +100,28 @@ const index = () => {
                   </div>
                   <div className="relative z-0 col-span-2">
                     <input
-                      type="email"
+                      type="text"
                       name="email"
+                      onChange={(e)=>SetName(e.target.value)}
+                      value={Name}
                       className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
                       placeholder=" "
                     />
                     <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
-                      Your email
+                      Your Name
                     </label>
                   </div>
                   <div className="relative z-0 col-span-2">
                     <textarea
                       name="message"
                       rows="5"
+                      onChange={(e)=>Setmsg(e.target.value)}
+
                       className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
                       placeholder=" "
-                    ></textarea>
+                    >
+                      {msg}
+                    </textarea>
                     <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
                       Your message
                     </label>
@@ -153,4 +195,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
