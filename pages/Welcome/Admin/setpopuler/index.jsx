@@ -4,8 +4,10 @@ import Router from "next/router";
 import React from "react";
 import Url from "../../../../components/ImgApi";
 import Nav from "../../../../components/admin/Nav";
+import AddPT from "../../../../components/admin/addPT";
 import Table from "../../../../components/util/table/Table";
 import DBcon from "../../../../database/connection";
+
 const colunm = [
   {
     Header: "ID",
@@ -85,6 +87,7 @@ const Index = ({ user }) => {
   return (
     <div className="w-full relative">
       <Nav />
+      <AddPT />
       <div className="w-full shadow-md p-10 bg-gradient-to-bl from-logoBlue/10 to-logoBlue/40">
         <div className="w-full relative flex justify-between items-center">
           <div className="">
@@ -102,12 +105,12 @@ const Index = ({ user }) => {
               Go Back
             </button>
             <button
-              onClick={() => {
-                Router.push("/Welcome/Admin/addTour");
-              }}
+              // onClick={() => {
+              //   Router.push("/Welcome/Admin/addTour");
+              // }}
               className="btn btn-outline btn-secondary"
             >
-              Add new Tour
+              Add Populer Tour
             </button>
           </div>
         </div>
@@ -115,6 +118,7 @@ const Index = ({ user }) => {
       <div className="w-full p-10 ">
         <Table datas={data} colunm={colunm} />
       </div>
+      
     </div>
   );
 };

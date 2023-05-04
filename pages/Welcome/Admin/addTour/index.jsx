@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import ImgApi from "../../../../components/ImgApi";
 import Nav from "../../../../components/admin/Nav";
 import DBcon from '../../../../database/connection';
+import SqlFormate from "../../../../lib/SqlFormater";
 
 import jwt from "jsonwebtoken";
 
@@ -72,16 +73,16 @@ const Index = () => {
         const photodata = uploadphotoRes.data.name;
        
         const payloadBody =  {
-          titel,
-          name,
-          price,
-          fromLink,
-          seoDes,
-          type,
-          catagory,
+          titel:titel,
+          name:name,
+          price:price,
+          fromLink:fromLink,
+          seoDes:SqlFormate(seoDes),
+          type:type,
+          catagory:catagory,
           tag,
-          description: btoa(description),
-          dur,
+          description: SqlFormate(description),
+          dur:dur,
           photo:JSON.stringify(photodata.map((e)=>{
             return e.filename
           }))
@@ -110,7 +111,7 @@ const Index = () => {
 
       
         <div className=" p-10 text-center">
-          <h1 className="text-2xl font-bold capitalize">Add New Tour pakedge</h1>
+          <h1 className="text-2xl font-bold capitalize">Add New Tour pakedge </h1>
         </div>
         <div>
           <div className="w-full flex justify-center max-w-7xl mx-auto my-2">

@@ -32,7 +32,7 @@ useEffect(()=>{
   return (
     <Layout>
       {/* top  */}
-      <div className=" w-full h-500px relative">
+      <div className=" w-full h-250px relative">
         <div className=" w-full py-20 h-full relative overflow-hidden">
           <div className=" w-full absolute h-full top-0 left-0">
             <img
@@ -45,13 +45,13 @@ useEffect(()=>{
           </div>
           <div className="relative w-full h-full flex justify-center items-center">
             <div className="w-full max-w-7xl mx-auto flex justify-center items-center">
-              <div className="w-3/4 h-44 glass rounded-lg flex justify-center items-center">
+              <div className="w-3/4 h-32 glass relative top-10 rounded-lg flex justify-center items-center">
                 <h1 className="flex-2 text-2xl text-transparent px-3 text-center bg-gradient-to-tr from-logoTag to-logoBlue bg-clip-text font-bold capitalize">
                   {data ? data.name : "data is loading ...."}
                 </h1>
                 <div className="flex-1 h-full w-1/4 relative">
                   <img
-                    className="w-72 absolute bottom-0"
+                    className="w-52 absolute bottom-0"
                     src="/graphic/travel.png"
                     alt=""
                   />
@@ -76,22 +76,24 @@ useEffect(()=>{
                 </span>{" "}
                 {data ? data.dur : "data is loading ...."}{" "}
               </p>
+              <div className="relative -top-5">
               <span className="w-48 h-1 rounded-xl relative inline-block bg-logoRay"></span>
               <span className="w-20 ml-2 h-1 rounded-xl relative inline-block bg-logoRay"></span>
               <span className="w-4 ml-2 h-1 rounded-xl relative inline-block bg-logoRay"></span>
-            </div>
-            <div className="relative w-full max-w-6xl mx-auto mt-5">
-              <div className="w-full relative">
-                <img className="relative w-full" src={img} alt="" />
               </div>
-              <div className="w-full relative flex mt-1 overflow-hidden p-1 overflow-x-scroll">
+            </div>
+            <div className="relative w-full -top-5 max-w-6xl overflow-hidden mx-auto mt-2">
+              <div className="w-full img-400px  relative">
+                <img className="relative w-full h-full object-cover" src={img} alt="" />
+              </div>
+              <div className="w-full relative flex justify-between min-w-full mt-1 overflow-hidden p-1 overflow-x-scroll">
                 {
                   data?JSON.parse(data.img).map((e,i)=>{
                     return (
                       <div key={i} onClick={()=>{
                         setimg(Url+"/upload/"+e)
                       }} 
-                      className="w-52 min-w-52 h-32 mr-2 relative ring-1 ring-logoRay rounded-md shadow-md overflow-hidden cursor-pointer hover:shadow-lg">
+                      className="w-36 md:w-52 min-max-img h-24 md:h-32 m-1 relative ring-1 ring-logoRay rounded-md shadow-md overflow-hidden cursor-pointer hover:shadow-lg">
                       <img
                         className="relative w-full h-full object-cover"
                         src={Url+"/upload/"+e}
@@ -125,7 +127,7 @@ useEffect(()=>{
 
                 className="dynamic"
                 dangerouslySetInnerHTML={{
-                  __html: data ? atob(data.details) : "data is loading ....",
+                  __html: data ? data.details : "data is loading ....",
                 }}
               ></div>
             </div>

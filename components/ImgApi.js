@@ -1,4 +1,4 @@
-// const Url = "https://image.sunholidaysltd.com";
+// const Url = "https://img.sunholidaysltd.com";
 const Url = "http://192.168.111.164:5000";
 
 

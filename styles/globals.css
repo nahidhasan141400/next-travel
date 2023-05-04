@@ -201,3 +201,33 @@ ol {
 .herotitel {
   text-shadow: 0 0 0.1px #fff;
 }
+
+.h-350px {
+  height: 350px;
+}
+.h-400px {
+  height: 630px;
+}
+.h-250px {
+  height: 250px;
+}
+
+.h-200px {
+  height: 200px;
+}
+.img-400px {
+  height: 500px;
+}
+
+.min-max-img {
+  min-width: 200px;
+}
+
+@media (max-width: 600px) {
+  .img-400px {
+    height: 300px;
+  }
+  .min-max-img {
+    min-width: 130px;
+  }
+}
