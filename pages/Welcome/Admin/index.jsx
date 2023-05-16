@@ -6,7 +6,13 @@ import Url from "../../../components/ImgApi";
 import Nav from "../../../components/admin/Nav";
 import Table from "../../../components/util/table/Table";
 import DBcon from "../../../database/connection";
-const colunm = [
+
+const Index = ({ user }) => {
+  const [data, setData] = React.useState([]);
+
+
+  // clunm 
+  const colunm = [
   {
     Header: "ID",
     accessor: "id", // accessor is the "key" in the data
@@ -51,6 +57,9 @@ const colunm = [
           <button
             type="button"
             disabled={+prop.row.original.product > 1}
+
+            onClick={(e)=>{DeleteTour(prop.row.original.id)}}
+
             class={`${
               +prop.row.original.product > 1 ? "cursor-not-allowed" : ""
             } px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white`}
@@ -69,8 +78,8 @@ const colunm = [
     },
   },
 ];
-const Index = ({ user }) => {
-  const [data, setData] = React.useState([]);
+// colunm end 
+
   React.useEffect((e) => {
     const get = async () => {
       try {
@@ -82,6 +91,12 @@ const Index = ({ user }) => {
     };
     get()
   }, []);
+
+  const DeleteTour = async (id)=>{
+    
+  }
+
+
   return (
     <div className="w-full relative">
       <Nav />
