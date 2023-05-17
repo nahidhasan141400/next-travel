@@ -1,5 +1,7 @@
+import axios from "axios";
 import DBcon from "../../../database/connection";
 var jwt = require("jsonwebtoken");
+import url from "../../../components/ImgApi"
 
 export default async function handler(req, res) {
   let cart = null;
@@ -20,11 +22,9 @@ export default async function handler(req, res) {
       const DataBase = await DBcon();
       const { connection } = DataBase;
       const [data] = await connection.execute(
-        `SELECT * FROM admin WHERE email="${cart.email}"`
-
-
-    //  TODO make  a delet qu sql 
+        `SELECT * FROM admin WHERE email="${cart.email}"`  
       );
+      
       connection.end();
       if (data.length !== 0) {
             if (!data[0].status) {
@@ -41,17 +41,30 @@ export default async function handler(req, res) {
       return res.send(error);
     }
 
+
+    const DataBase = await DBcon();
+    const { connection } = DataBase;
     try {
-      const DataBase = await DBcon();
-      const { connection } = DataBase;
-      const [datafromDB] = await connection.execute(
-        `INSERT INTO tour (id, name, titel, log, img, details, status, price, fromlink, tag, meta,types,catagory,future,dur, created) VALUES (NULL, '${name}', '${titel}', 'start', '${photo}', '${description}', '1', '${price}', '${fromLink}', '${JSON.stringify(tag)}', '${seoDes}','${type}','${catagory}','0','${dur}', current_timestamp());`
-      );
+      
+      let sqlfro = `SELECT * FROM tour WHERE id="${id}"`;
+
+      const [datafromDB] = await connection.execute(sqlfro);
+      
+      const imgList = datafromDB[0].img
+      
+      axios.post(url+"/delete",{list:imgList},{
+        headers: {
+          token: "imgauth",
+          cc: req.cookies.sort,
+        }});
+      let sql = `DELETE FROM tour WHERE tour.id = "${id}"`;
+      const [datafromDBv] = await connection.execute(sql);
       connection.end();
       res.send({ msg: "ok", datafromDB });
       // res.send({ msg: "ok",});
     } catch (error) {
       console.log("server ee", error);
+      connection.end();
       res.status(500);
       res.send(error);
     }

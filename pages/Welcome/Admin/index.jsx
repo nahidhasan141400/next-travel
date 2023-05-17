@@ -6,9 +6,11 @@ import Url from "../../../components/ImgApi";
 import Nav from "../../../components/admin/Nav";
 import Table from "../../../components/util/table/Table";
 import DBcon from "../../../database/connection";
+import { toast } from "react-toastify";
 
 const Index = ({ user }) => {
   const [data, setData] = React.useState([]);
+  const [reload,setReaload ] = React.useState(1)
 
 
   // clunm 
@@ -90,10 +92,15 @@ const Index = ({ user }) => {
       }
     };
     get()
-  }, []);
+  }, [reload]);
 
   const DeleteTour = async (id)=>{
-    
+    try {
+      const datares = await toast.promise(axios.post("/api/v1.0/deleteTour",{id}),{pending:"wait",success:"Delete Successfully",error:"🤢 Something is Wrong !"},{position:"top-center"});
+      setReaload((e)=>e+1);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 

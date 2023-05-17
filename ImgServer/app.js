@@ -29,7 +29,6 @@ var storage = multer.diskStorage({
     cb(null, "./public/upload");
   },
   filename: function (req, file, cb) {
-    console.log(file);
     let d = new Date();
     cb(null, `${d.getTime()}-${file.originalname}`);
   },
@@ -39,6 +38,8 @@ var storage = multer.diskStorage({
 const upload = multer({
   storage: storage,
 });
+
+
 
 const authAdmin = async (req, res, next) => {
   let cart = req.header("cc");
@@ -97,7 +98,6 @@ function uploadFile(req, res) {
 
 // delete function 
 async function deletefun(req,res){
-  console.log(req.body.list);
   const list = JSON.parse(req.body.list);
   const deletedList  =  [];
   const errChack = [];
@@ -267,33 +267,32 @@ const mail = async (req,res)=>{
 }
 
 
-// delete function 
-async function deletefun(req,res){
-  console.log( "json list >",req.body.list);
-  const list = JSON.parse(req.body.list);
-  const deletedList  =  [];
-  const errChack = [];
+// // delete function 
+// async function deletefun(req,res){
+//   const list = JSON.parse(req.body.list);
+//   const deletedList  =  [];
+//   const errChack = [];
 
- for (let index = 0; index < list.length; index++) {
-  const element = list[index];
-  try {
-    await fsPromises.unlink(path.join(__dirname,"public","upload",element));
-    deletedList.push(element);
-  } catch (err) {
-    errChack.push(err);
-  }
- }
- if(errChack.length){
-  res.status(202).send({
-    err:errChack,
-    list:deletedList,
-  })
- }else{
-  res.status(200).send({msg:"ok all deleted"})
- }
+//  for (let index = 0; index < list.length; index++) {
+//   const element = list[index];
+//   try {
+//     await fsPromises.unlink(path.join(__dirname,"public","upload",element));
+//     deletedList.push(element);
+//   } catch (err) {
+//     errChack.push(err);
+//   }
+//  }
+//  if(errChack.length){
+//   res.status(202).send({
+//     err:errChack,
+//     list:deletedList,
+//   })
+//  }else{
+//   res.status(200).send({msg:"ok all deleted"})
+//  }
 
 
-}
+// }
 
 
 
@@ -302,7 +301,7 @@ app.post("/upload", authAdmin, auth, upload.single("photo"), uploadFile);
 app.post("/uploads", authAdmin, upload.array("photos"), uploadFiles);
 app.post("/delete",authAdmin,deletefun);
 app.post("/mailto",mail)
-app.post("/delete",authAdmin,deletefun);
+// app.post("/delete",authAdmin,deletefun);
 
 
 
