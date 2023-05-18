@@ -264,6 +264,7 @@ const Index = () => {
                   setImg1(e.target.files[0]);
                 }}
                 type="file"
+                accept="image/png, image/gif, image/jpeg"
                 required
                 className="file-input file-input-bordered w-full max-w-xs"
               />
@@ -271,16 +272,18 @@ const Index = () => {
               onChange={(e) => {
                 setImg2(e.target.files[0]);
               }}
-              required
+              
                 type="file"
+                accept="image/png, image/gif, image/jpeg"
                 className="file-input file-input-bordered w-full max-w-xs"
               />
               <input
               onChange={(e) => {
                 setImg3(e.target.files[0]);
               }}
-              required
+              
                 type="file"
+                accept="image/png, image/gif, image/jpeg"
                 className="file-input file-input-bordered w-full max-w-xs"
               />
             </div>
@@ -290,6 +293,7 @@ const Index = () => {
                 setImg4(e.target.files[0]);
               }}
                 type="file"
+                accept="image/png, image/gif, image/jpeg"
                 className="file-input file-input-bordered w-full max-w-xs"
               />
               <input
@@ -297,15 +301,10 @@ const Index = () => {
                 setImg5(e.target.files[0]);
               }}
                 type="file"
+                accept="image/png, image/gif, image/jpeg"
                 className="file-input file-input-bordered w-full max-w-xs"
               />
-              <input
-              onChange={(e) => {
-                setImg6(e.target.files[0]);
-              }}
-                type="file"
-                className="file-input file-input-bordered w-full max-w-xs"
-              />
+              
             </div>
           </div>
         </div>
@@ -333,8 +332,9 @@ const Index = () => {
             />
           </Resizable>
         </div>
-        <div className="w-full max-w-7xl mx-auto p-8 mb-11">
-          <button className={`btn btn-success float-right ${load?"loading":""}`}>Add Tour </button>
+        <div className="w-full max-w-7xl mx-auto p-8 mb-11 flex justify-between ">
+        <button type="button" onClick={()=>{Router.back()}} className="btn btn-error">Back to Dashboard</button>
+          <button className={`btn btn-success  ${load?"loading":""}`}>Add Tour </button>
         </div>
       </form>
     </div>

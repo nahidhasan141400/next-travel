@@ -46,7 +46,7 @@ export default async function handler(req, res) {
         });
 
         res.setHeader("Set-Cookie",cookie.serialize("sort",token,{
-            maxAge:  7 * 24 * 60 * 60,
+            maxAge:  86400,
             sameSite: "strict",
             path: "/"
         }))

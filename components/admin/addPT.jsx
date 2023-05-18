@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import axios from "axios";
 import {toast} from "react-toastify";
 
-const AddPT = ({close}) => {
+const AddPT = ({close,reload}) => {
   const [data,setData] = useState([]);
   const [tourid,setTourId] = useState();
   
@@ -35,6 +35,7 @@ const AddPT = ({close}) => {
       {
         position:"top-center"
       });
+      reload((e)=>e+1)
       close(false)
     } catch (error) {
       console.log(error);

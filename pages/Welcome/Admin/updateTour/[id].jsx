@@ -29,6 +29,7 @@ const Index = () => {
   const [value, setValue] = React.useState([]);
   const editor = useRef(null);
   const [content, setContent] = useState("");
+  const [load,SetLoad] = useState(false);
 
   // form data handler 
 
@@ -77,6 +78,10 @@ useEffect(()=>{
   // from submit handler 
   const save = ()=>{
    
+    if(load){
+      return;
+    }
+    SetLoad(true);
     const saveData = async()=>{
       try {
         
@@ -338,7 +343,8 @@ useEffect(()=>{
           </Resizable>
         </div>
         <div className="w-full max-w-7xl mx-auto p-8 mb-11">
-          <button className="btn btn-success float-right">Add Tour </button>
+          <button type="button" onClick={()=>{Router.back()}} className="btn btn-error">Back to Dashboard</button>
+          <button type="submit" className={`btn btn-success float-right ${load?"loading":""}`}>Update</button>
         </div>
       </form>
     </div>

@@ -1,80 +1,20 @@
 import axios from "axios";
 import jwt from "jsonwebtoken";
 import Router from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import Url from "../../../../components/ImgApi";
 import Nav from "../../../../components/admin/Nav";
 import AddPT from "../../../../components/admin/addPT";
 import Table from "../../../../components/util/table/Table";
 import DBcon from "../../../../database/connection";
+import {toast} from "react-toastify";
 
-const colunm = [
-  {
-    Header: "ID",
-    accessor: "id", // accessor is the "key" in the data
-  },
-  {
-    Header: "Name",
-    accessor: "name",
-  },
-  {
-    Header: "Photo",
-    accessor: "img",
-    Cell: (prop) => {
-      return (
-        <div className="h-16 relative">
-          <img
-            className="h-full"
-            src={`${Url}/upload/${JSON.parse(prop.row.original.img)[0]}`}
-            alt=""
-          />
-        </div>
-      );
-    },
-  },
-  {
-    Header: "Catagory",
-    accessor:"catagory"
-  },
-  {
-    Header: "Types",
-    accessor:"types"
-  },
-  {
-    Header: "Price",
-    accessor: "price",
-  },
 
-  {
-    Header: "Action",
-    Cell: (prop) => {
-      return (
-        <div class="inline-flex rounded-md shadow-sm" role="group">
-          <button
-            type="button"
-            disabled={+prop.row.original.product > 1}
-            class={`${
-              +prop.row.original.product > 1 ? "cursor-not-allowed" : ""
-            } px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white`}
-          >
-            delete
-          </button>
-
-          <button
-            type="button"
-            class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
-          >
-            edit
-          </button>
-        </div>
-      );
-    },
-  },
-];
 const Index = ({ user }) => {
   const [data, setData] = React.useState([]);
   const [id, setid] = React.useState([]);
   const [add, adset] = React.useState(false);
+  const [r,setr] = useState(1);
   React.useEffect((e) => {
     const get = async () => {
       try {
@@ -93,12 +33,91 @@ const Index = ({ user }) => {
       }
     };
     get()
-  }, []);
+  }, [r]);
+
+// delete populer tour 
+
+const deleteTour = async (dataid)=>{
+  try {
+    const deleteres = await toast.promise(axios.post("/api/v1.0/deletePtour",{dataid:dataid}),{
+      pending:"Wait",
+      success:"Tour Deleted 🤗",
+      error:"ops something is wrong 😔"
+    },
+    {
+      position:"top-center"
+    });
+    setr((e)=>e+1);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+  const colunm = [
+    {
+      Header: "ID",
+      accessor: "id", // accessor is the "key" in the data
+    },
+    {
+      Header: "Name",
+      accessor: "name",
+    },
+    {
+      Header: "Photo",
+      accessor: "img",
+      Cell: (prop) => {
+        return (
+          <div className="h-16 relative">
+            <img
+              className="h-full"
+              src={`${Url}/upload/${JSON.parse(prop.row.original.img)[0]}`}
+              alt=""
+            />
+          </div>
+        );
+      },
+    },
+    {
+      Header: "Catagory",
+      accessor:"catagory"
+    },
+    {
+      Header: "Types",
+      accessor:"types"
+    },
+    {
+      Header: "Price",
+      accessor: "price",
+    },
+  
+    {
+      Header: "Action",
+      Cell: (prop) => {
+        return (
+          <div class="inline-flex rounded-md shadow-sm" role="group">
+            <button
+              type="button"
+              onClick={()=>{deleteTour(prop.row.original.id)}}
+              disabled={+prop.row.original.product > 1}
+              class={`${
+                +prop.row.original.product > 1 ? "cursor-not-allowed" : ""
+              } px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white`}
+            >
+              delete
+            </button>
+  
+           
+          </div>
+        );
+      },
+    },
+  ];
   return (
     <div className="w-full relative">
       <Nav />
       {
-        add?<AddPT close={adset}/>:""
+        add?<AddPT reload={setr} close={adset}/>:""
       }
       <div className="w-full shadow-md p-10 bg-gradient-to-bl from-logoBlue/10 to-logoBlue/40">
         <div className="w-full relative flex justify-between items-center">
