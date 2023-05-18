@@ -76,7 +76,7 @@ useEffect(()=>{
                 </span>{" "}
                 {data ? data.dur : "data is loading ...."}{" "}
               </p>
-              <div className="relative -top-5">
+              <div className="relative -top-[16px]">
               <span className="w-48 h-1 rounded-xl relative inline-block bg-logoRay"></span>
               <span className="w-20 ml-2 h-1 rounded-xl relative inline-block bg-logoRay"></span>
               <span className="w-4 ml-2 h-1 rounded-xl relative inline-block bg-logoRay"></span>
@@ -86,14 +86,14 @@ useEffect(()=>{
               <div className="w-full img-400px  relative">
                 <img className="relative w-full h-full object-cover" src={img} alt="" />
               </div>
-              <div className="w-full relative flex justify-between min-w-full mt-1 overflow-hidden p-1 overflow-x-scroll">
+              <div className="w-full relative flex justify-between min-w-full mt-1 overflow-hidden p-1  overflow-x-scroll pb-3">
                 {
                   data?JSON.parse(data.img).map((e,i)=>{
                     return (
                       <div key={i} onClick={()=>{
                         setimg(Url+"/upload/"+e)
                       }} 
-                      className="w-36 md:w-52 min-max-img h-24 md:h-32 m-1 relative ring-1 ring-logoRay rounded-md shadow-md overflow-hidden cursor-pointer hover:shadow-lg">
+                      className={`${(Url+"/upload/"+e === img)?"ring-4 ring-logoRay z-50 shadow-xl":"ring-1 ring-logoBlue shadow-md"}  w-36 md:w-52 min-max-img h-24 md:h-32 m-1 relative   rounded-md  overflow-hidden cursor-pointer hover:shadow-lg`}>
                       <img
                         className="relative w-full h-full object-cover"
                         src={Url+"/upload/"+e}

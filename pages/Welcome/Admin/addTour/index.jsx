@@ -24,6 +24,7 @@ const Index = () => {
   const [value, setValue] = React.useState([]);
   const editor = useRef(null);
   const [content, setContent] = useState("");
+  const [load,SetLoad] = useState(false);
 
   // form data handler 
 
@@ -47,7 +48,10 @@ const Index = () => {
   const [description,setDescription] = useState();
   // from submit handler 
   const save = ()=>{
-    console.log("start");
+    if(load){
+      return;
+    }
+    SetLoad(true);
     const saveData = async()=>{
       try {
         console.log("start");
@@ -68,6 +72,7 @@ const Index = () => {
           },
         })
         if(uploadphotoRes.status !== 200){
+          SetLoad(false)
           return toast.error("somethin wrong with img server!")
         }
         const photodata = uploadphotoRes.data.name;
@@ -95,6 +100,7 @@ const Index = () => {
         Router.push("/Welcome/Admin");
       } catch (error) {
         console.log(error);
+        SetLoad(false)
         toast.error("some thing is Wrong !!")
       }
     }
@@ -328,7 +334,7 @@ const Index = () => {
           </Resizable>
         </div>
         <div className="w-full max-w-7xl mx-auto p-8 mb-11">
-          <button className="btn btn-success float-right">Add Tour </button>
+          <button className={`btn btn-success float-right ${load?"loading":""}`}>Add Tour </button>
         </div>
       </form>
     </div>

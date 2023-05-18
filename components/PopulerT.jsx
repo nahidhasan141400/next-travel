@@ -55,7 +55,11 @@ useEffect(()=>{
               delay: 2500,
               disableOnInteraction: false,
             }}
-            pagination={true}
+            // pagination={true}
+            navigation={true}
+            pagination={{
+              clickable: true
+            }}
             modules={[EffectCoverflow,Autoplay, Pagination]}
             className="mySwiper"
           >
