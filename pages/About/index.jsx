@@ -10,7 +10,7 @@ import Team from "../../components/Team";
 
 
 const Index = () => {
-  const [nav,setNav ] = useState("aw")
+  const [nav,setNav ] = useState("ab")
   return (
     <div>
       <Layout>

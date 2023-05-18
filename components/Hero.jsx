@@ -49,7 +49,8 @@ const Hero = () => {
     <div
       className="hero min-h-screen"
       style={{
-        backgroundImage: `url("/img/hero.jpg")`,
+        backgroundImage: `url("/img/sailor/sunholiday-w.jpg")`,
+        backgroundPosition:"left"
       }}
     >
       <div className="w-full h-screen">

@@ -40,7 +40,11 @@ const Nav = () => {
         <li>
          
         </li>
-        <li><a>Settings</a></li>
+        <li><a
+        onClick={()=>{
+          router.push("/Welcome/Admin/Setting")
+        }}
+        >Settings</a></li>
         <li><p 
         onClick={()=>{
           document.cookie = "sort=''";
