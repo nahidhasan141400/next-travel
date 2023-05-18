@@ -76,30 +76,14 @@ useEffect(()=>{
 },[id])
   // from submit handler 
   const save = ()=>{
-    console.log("start");
+   
     const saveData = async()=>{
       try {
-        console.log("start");
-        const imgBody = new FormData();
-        imgBody.append("photos",img1)
-        imgBody.append("photos",img2)
-        imgBody.append("photos",img3)
-        imgBody.append("photos",img4)
-        imgBody.append("photos",img5)
-        imgBody.append("photos",img6)
-
+        
+      
 
   
-        const uploadphotoRes = await axios.post(ImgApi+"/uploads",imgBody,{
-          headers: {
-            token: "imgauth",
-            cc: getCookie("sort"),
-          },
-        })
-        if(uploadphotoRes.status !== 200){
-          return toast.error("somethin wrong with img server!")
-        }
-        const photodata = uploadphotoRes.data.name;
+       
        
         const payloadBody =  {
           titel:titel,
@@ -109,16 +93,14 @@ useEffect(()=>{
           seoDes:SqlFormate(seoDes),
           type:type,
           catagory:catagory,
-          tag,
+          id,
           description: SqlFormate(description),
           dur:dur,
-          photo:JSON.stringify(photodata.map((e)=>{
-            return e.filename
-          }))
+         
   
         };
         
-        const saveDataToDB = await axios.post("/api/v1.0/tour",payloadBody);
+        const saveDataToDB = await axios.post("/api/v1.0/updatetour",payloadBody);
         
         toast.success("Product save!")
         Router.push("/Welcome/Admin");
@@ -137,9 +119,7 @@ useEffect(()=>{
         e.preventDefault();
         save();
       }}>
-
-      
-        <div className=" p-10 text-center">
+          <div className=" p-10 text-center">
           <h1 className="text-2xl font-bold capitalize">Update Tour </h1>
         </div>
         <div>

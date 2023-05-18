@@ -73,11 +73,21 @@ const colunm = [
 ];
 const Index = ({ user }) => {
   const [data, setData] = React.useState([]);
+  const [id, setid] = React.useState([]);
+  const [add, adset] = React.useState(false);
   React.useEffect((e) => {
     const get = async () => {
       try {
         const serverres = await axios("/api/v1.0/tour");
-        setData(serverres.data);
+        const serverresid = await axios("/api/v1.0/addPtour");
+        setid(serverresid.data);
+      const datas = serverresid.data.map((e)=>{
+          return serverres.data.filter((x)=> +x.id === +e.data)[0]
+        })
+
+        setData(datas);
+
+
       } catch (error) {
         console.log(error);
       }
@@ -87,7 +97,9 @@ const Index = ({ user }) => {
   return (
     <div className="w-full relative">
       <Nav />
-      <AddPT />
+      {
+        add?<AddPT close={adset}/>:""
+      }
       <div className="w-full shadow-md p-10 bg-gradient-to-bl from-logoBlue/10 to-logoBlue/40">
         <div className="w-full relative flex justify-between items-center">
           <div className="">
@@ -105,9 +117,7 @@ const Index = ({ user }) => {
               Go Back
             </button>
             <button
-              // onClick={() => {
-              //   Router.push("/Welcome/Admin/addTour");
-              // }}
+              onClick={()=>adset(true)}
               className="btn btn-outline btn-secondary"
             >
               Add Populer Tour

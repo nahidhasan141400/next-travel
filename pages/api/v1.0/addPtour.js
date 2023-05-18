@@ -16,19 +16,7 @@ export default async function handler(req, res) {
   const method = req.method;
 
   if (method === "POST") {
-   const { titel,
-    name,
-    price,
-    fromLink,
-    seoDes,
-    type,
-    catagory,
-    // tag,
-    dur,
-    description,
-    // photo,
-    id
-  } = req.body;
+   const {id} = req.body;
     try {
       const DataBase = await DBcon();
       const { connection } = DataBase;
@@ -55,9 +43,7 @@ export default async function handler(req, res) {
       const DataBase = await DBcon();
       const { connection } = DataBase;
 
-        const sql = `UPDATE tour SET name = '${name}', titel = '${titel}', log = 'chaing by - ${cart.email}', details = '${description}', price = '${price}', fromlink = '${fromLink}', meta = '${seoDes}', types = '${type}', catagory = '${catagory}', dur = '${dur}' WHERE tour.id = "${id}";`
-
-
+      const sql = `INSERT INTO populer (id, data, created) VALUES (NULL, '${id}', current_timestamp());`
       const [datafromDB] = await connection.execute(sql);
       connection.end();
       res.send({ msg: "ok", datafromDB });
@@ -68,14 +54,10 @@ export default async function handler(req, res) {
       res.send(error);
     }
   } else if (method === "GET") {
-    if(!cart){
-        return res.status(401).send("inlugul - update -68");
-    }
-    const id = req.query.id;
     try {
       const DataBase = await DBcon();
       const { connection } = DataBase;
-      const [datafromDB] = await connection.execute(`SELECT * FROM tour WHERE id="${id}";`);
+      const [datafromDB] = await connection.execute("SELECT * FROM `populer`");
       connection.end();
 
       //   console.log(datafromDB);

@@ -1,6 +1,6 @@
 import AccseesPatner from "../components/AccseesPatner";
 import Affiliate from "../components/Affiliate";
-import BusnesStat from "../components/BusnesStat";
+// import BusnesStat from "../components/BusnesStat";
 // import Category from "../components/category";
 import BookPross from "../components/BookPross";
 import Discount from "../components/Discount";
@@ -19,7 +19,7 @@ const index = () => {
         <PopulerT/>
         <WhyYCU/>
         <BookPross/>
-        <BusnesStat/>
+        {/* <BusnesStat/> */}
         <Discount/>
         <Affiliate/>  
       </Layout>
