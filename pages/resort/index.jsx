@@ -1,14 +1,19 @@
-import React from "react";
+import React,{useState} from "react";
 import Layout from "../../components/Layout";
+import Form from "../../components/resortForm/Form";
 
 const Index = () => {
+  const [form,setform] = useState();
   return (
     <Layout>
       <div className="w-full flex justify-center flex-col items-center pt-40 pb-14">
-        <p className="relative -left-32 md:-left-72 text-logoSun">
+        {
+          form?<Form form={form} close={setform}/>:""
+        }
+        <p className="relative -left-[90px] md:-left-[320px] text-logoSun">
           Our own Resorts
         </p>
-        <h1 className="text-2xl font-bold md:text-5xl">
+        <h1 className="text-2xl font-bold text-center md:text-left md:text-5xl">
           Sailor Moon Resorts, Saint Martin
         </h1>
         <p className="md:text-2xl text-xl font-thin">Cox-Bazar,Bangladesh</p>
@@ -16,14 +21,14 @@ const Index = () => {
       {/* main  */}
       <div className="w-full px-4 max-w-7xl mx-auto">
         {/* description  */}
-        <div className="text-center font-light">
+        <div className="text-justify font-light">
           <p>
           <p>Sailor Moon Resorts, Saint Martin is situated at West Sea-Beach Konarpara, Saint Martin, Cox&#39;s Bazar, Bangladesh. We own this resort since 2022. Sailor Moon Resorts one of the finest resort in Saint Martin. With the varity of services Sailor Moon Resort try to provide the best value for money service to there customer. 100% Customer Satisfactory obtaining is our main goal.&nbsp;</p>
 
           </p>
         </div>
         {/* b photo  */}
-        <div>
+        <div className="mt-10">
           <div>
             
           </div>
@@ -265,7 +270,7 @@ const Index = () => {
               </span>{" "}
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
-              We Provide the best price in Seint-martin
+              We Provide the best price in Saint-martin
             </p>
           </div>
           <div className="grid max-w-md gap-10 row-gap-5 lg:max-w-screen-lg sm:row-gap-10 lg:grid-cols-3 xl:max-w-screen-lg sm:mx-auto">
@@ -283,7 +288,9 @@ const Index = () => {
                 </div>
               </div>
               <div>
-                <a className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
+                <a 
+                onClick={()=>setform("Couple Room")}
+                className="inline-flex items-center cursor-pointer justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
                   Book Now
                 </a>
                 <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
@@ -310,7 +317,7 @@ const Index = () => {
                 </div>
               </div>
               <div>
-                <a className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
+                <a onClick={()=>setform("Double Room")} className="inline-flex cursor-pointer items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
                   Book Now
                 </a>
                 <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
@@ -333,7 +340,7 @@ const Index = () => {
                 </div>
               </div>
               <div>
-                <a className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
+                <a onClick={()=>{setform("Full Resort")}} className="inline-flex cursor-pointer items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
                   Book Now
                 </a>
                 <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">

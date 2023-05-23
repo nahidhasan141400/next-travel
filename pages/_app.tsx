@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {/* massanger fb chat bot  */}
       <div id="fb-root"></div>
 
-      <div id="fb-customer-chat" class="fb-customerchat"></div>
+      <div id="fb-customer-chat" className="fb-customerchat"></div>
 
       <Script
         id="messenger-tag"

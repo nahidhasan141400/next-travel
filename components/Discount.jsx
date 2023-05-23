@@ -35,7 +35,6 @@ const Discount = () => {
     get()
   }, []);
 
-  console.log(data);
   return (
     <div className='relative w-full h-screen bg-img3'>
       <div className="w-full h-full relative mx-auto flex flex-col ">
