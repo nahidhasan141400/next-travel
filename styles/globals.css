@@ -231,3 +231,8 @@ ol {
     min-width: 130px;
   }
 }
+
+
+.tr-2{
+  transition: all 0.3s linear;
+}

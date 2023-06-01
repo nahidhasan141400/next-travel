@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export const BookPross = () => {
     return (
@@ -39,7 +40,7 @@ export const BookPross = () => {
         <div className="grid gap-10 lg:grid-cols-4 sm:grid-cols-2">
           <div>
             <div className="flex items-center justify-between mb-6">
-              <p className="text-2xl font-bold">Step 1</p>
+              <p className="text-2xl font-bold"><span className="text-logoRay">Step</span> 1</p>
               <svg
                 className="w-6 text-gray-700 transform rotate-90 sm:rotate-0"
                 stroke="currentColor"
@@ -64,8 +65,7 @@ export const BookPross = () => {
               </svg>
             </div>
             <p className="text-gray-600">
-              If one examines precultural libertarianism, one is faced with a
-              choice: either accept rationalism or conclude that context.
+              Find out your best tour Package.Use Search or <Link className="underline hover:text-logoSun" href={'/Tour'}>click here</Link> to find the best tour Package for you 
             </p>
           </div>
           <div>
@@ -95,8 +95,7 @@ export const BookPross = () => {
               </svg>
             </div>
             <p className="text-gray-600">
-              That is the true genius of America - a faith in simple dreams, an
-              insistence on small miracles.
+              Click details to get information about the tour Package.And read the full details About the tour
             </p>
           </div>
           <div>
@@ -126,8 +125,7 @@ export const BookPross = () => {
               </svg>
             </div>
             <p className="text-gray-600">
-              Those options are already baked in with this model shoot me an email
-              clear blue water but we need distributors.
+            Click on Book Now and fill the form with correct information 
             </p>
           </div>
           <div>
@@ -149,8 +147,7 @@ export const BookPross = () => {
               </svg>
             </div>
             <p className="text-gray-600">
-              Lookout flogging bilge rat main sheet bilge water nipper fluke to go
-              on account heave down clap of thunder.
+            That's it now we will contact you shortly and provide booking confirmation
             </p>
           </div>
         </div>

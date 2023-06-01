@@ -1,5 +1,5 @@
-const Url = "https://img.sunholidaysltd.com";
-// const Url = "http://192.168.111.164:5000";
+// const Url = "https://img.sunholidaysltd.com";
+const Url = "http://192.168.111.139:5000";
 // const Url = "http://127.0.0.1:5000";
 
 

@@ -5,7 +5,7 @@ import {
   GiAirplaneDeparture,
   GiBackpack,
   GiCaravan,
-  GiOfficeChair
+  GiOfficeChair,
 } from "react-icons/gi";
 import { MdOutlineFamilyRestroom } from "react-icons/md";
 import { RiCustomerService2Line, RiVipCrownLine } from "react-icons/ri";
@@ -124,7 +124,7 @@ const Index = () => {
                   <span className="mx-3">International Medical Assistance</span>
                 </div>
 
-                <div className="flex items-center text-gray-800 -px-3 dark:text-gray-200">
+                <div className="flex items-center  -px-3 dark:text-gray-200">
                   <svg
                     className="w-5 h-5 mx-3"
                     xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +149,7 @@ const Index = () => {
           <div className="flex items-center justify-center w-full h-96 lg:w-1/2">
             <img
               className="object-cover w-full h-full max-w-2xl rounded-md"
-              src="https://images.unsplash.com/photo-1555181126-cf46a03827c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+              src="/img/sun glass on t.avif"
               alt="glasses photo"
             />
           </div>
@@ -185,10 +185,11 @@ const Index = () => {
                   Package Tour
                 </h1>
 
-                <p className="text-gray-500 dark:text-gray-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Provident ab nulla quod dignissimos vel non corrupti doloribus
-                  voluptatum eveniet
+                <p className="text-gray-500 text-justify">
+                  Sun Holidays Ltd.’s package tour is a convenient and
+                  all-inclusive travel option that offers pre-arranged
+                  transportation, accommodations, and activities, allowing
+                  travelers to explore various destinations hassle-free.
                 </p>
               </div>
 
@@ -201,10 +202,11 @@ const Index = () => {
                   Group Tour
                 </h1>
 
-                <p className="text-gray-500 dark:text-gray-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Provident ab nulla quod dignissimos vel non corrupti doloribus
-                  voluptatum eveniet
+                <p className="text-gray-500 text-justify">
+                  Sun Holidays Ltd.’s group tour is a social and cost-effective
+                  way to travel, where a group of individuals with similar
+                  interests join together to explore a destination, share
+                  experiences, and enjoy the camaraderie of fellow travelers.
                 </p>
               </div>
 
@@ -217,10 +219,11 @@ const Index = () => {
                   Family Tour
                 </h1>
 
-                <p className="text-gray-500 dark:text-gray-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Provident ab nulla quod dignissimos vel non corrupti doloribus
-                  voluptatum eveniet
+                <p className="text-gray-500 text-justify">
+                  Sun Holidays Ltd.’s family tour is a bonding adventure that
+                  allows relatives to create lifelong memories together by
+                  exploring new destinations, engaging in activities suitable
+                  for all ages, and strengthening their familial connections.
                 </p>
               </div>
 
@@ -233,17 +236,18 @@ const Index = () => {
                   Corporate Tour
                 </h1>
 
-                <p className="text-gray-500 dark:text-gray-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Provident ab nulla quod dignissimos vel non corrupti doloribus
-                  voluptatum eveniet
+                <p className="text-gray-500 text-justify">
+                  Sun Holidays Ltd.’s corporate tour provides an opportunity for
+                  colleagues to enhance team dynamics, foster collaboration, and
+                  rejuvenate while engaging in tailored activities and workshops
+                  in a different environment outside of the workplace.
                 </p>
               </div>
             </div>
 
             <div className="hidden lg:flex lg:w-1/2 lg:justify-center">
               <img
-                className="w-[28rem] h-[28rem] flex-shrink-0 object-cover xl:w-[34rem] xl:h-[34rem] rounded-full"
+                className="w-[28rem] h-[28rem] flex-shrink-0 object-cover hover:ring-4 hover:shadow-md tr-2 ring-logoTag xl:w-[34rem] xl:h-[34rem] rounded-full"
                 src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                 alt=""
               />
@@ -275,7 +279,7 @@ const Index = () => {
                   Package Tour
                 </h1>
 
-                <p className="text-gray-500 dark:text-gray-300">
+                <p className="text-gray-500 text-justify">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Provident ab nulla quod dignissimos vel non corrupti doloribus
                   voluptatum eveniet
@@ -550,21 +554,7 @@ const Index = () => {
               <a
                 href="#"
                 className="inline-flex items-center -mx-1 text-sm text-blue-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-blue-600 dark:hover:text-blue-500"
-              >
-                <span className="mx-1">read more</span>
-                <svg
-                  className="w-4 h-4 mx-1 rtl:-scale-x-100"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </a>
+              ></a>
             </div>
             {/* card  */}
             <div className="space-y-3">
@@ -590,21 +580,7 @@ const Index = () => {
               <a
                 href="#"
                 className="inline-flex items-center -mx-1 text-sm text-blue-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-blue-600 dark:hover:text-blue-500"
-              >
-                <span className="mx-1">read more</span>
-                <svg
-                  className="w-4 h-4 mx-1 rtl:-scale-x-100"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </a>
+              ></a>
             </div>
             {/* card  */}
             <div className="space-y-3">
@@ -719,7 +695,7 @@ const Index = () => {
               <p className="text-gray-500 dark:text-gray-300">
                 We will always update clients about our latest events and
                 offers. Public relation desk send newsletter, seasonal package
-                fare, special air fare time to time. 
+                fare, special air fare time to time.
               </p>
             </div>
           </div>

@@ -8,6 +8,7 @@ import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 import PopulerT from "../components/PopulerT";
 import WhyYCU from "../components/WhyYCU";
+import HomeRes from "../components/homeres/HomeRes"
 
 const index = () => {
   return (
@@ -17,6 +18,7 @@ const index = () => {
         {/* <Category/> */}
         <AccseesPatner/>
         <PopulerT/>
+        <HomeRes/>
         <WhyYCU/>
         <BookPross/>
         {/* <BusnesStat/> */}
@@ -27,4 +29,4 @@ const index = () => {
   )
 }
 
-export default index
+export default index 

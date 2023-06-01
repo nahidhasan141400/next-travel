@@ -2,10 +2,30 @@ import React,{useState} from "react";
 import Layout from "../../components/Layout";
 import Form from "../../components/resortForm/Form";
 
+
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
 const Index = () => {
   const [form,setform] = useState();
+  const [index, setIndex] = React.useState(-1);
   return (
     <Layout>
+          <Lightbox
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        slides={[
+          { src: "/img/sailor/sunholiday-w.jpg" },
+          { src: "/img/sailor/sailor_ (16).jpg" },
+          { src: "/img/sailor/sailor_ (2).jpg" },
+          { src: "/img/sailor/sailor_ (17).jpg" },
+          { src: "/img/sailor/sailor_-(30).jpg" },
+          { src: "/img/sailor/sailor_ (21).jpg" },
+          { src: "/img/sailor/SHA_6251.JPG" },
+          { src: "/img/sailor/SHA_6244 copy.jpg" },
+        ]}
+      />
       <div className="w-full flex justify-center flex-col items-center pt-40 pb-14">
         {
           form?<Form form={form} close={setform}/>:""
@@ -32,7 +52,7 @@ const Index = () => {
           <div>
             
           </div>
-          <img src="/img/sailor/sunholiday-w.jpg" alt="" />
+          <img onClick={()=>{setIndex(0)}} src="/img/sailor/sunholiday-w.jpg" alt="" />
         </div>
 
         {/* gelary  */}
@@ -43,16 +63,15 @@ const Index = () => {
                 Premium <span className="text-logoSun">3 star</span> Resorts
                 experience
               </h1>
-              <p className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
-                Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-                gentrify, subway tile poke farm-to-table. Franzen you probably
-                haven heard of them man bun deep jianbing selfies heirloom.
+              <p className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base text-justify">
+              Welcome to Sailor Moon Resort,Saint Martin where enchantment meets relaxation! Situated on the stunning shores of a pristine beach, our resort offers a captivating blend of beachfront beauty, exceptional dining experiences, and inviting facilities. Prepare to embark on a seaside retreat that will leave you feeling rejuvenated and spellbound.
               </p>
             </div>
             <div className="flex flex-wrap flex-col md:flex-row  md:-m-2 -m-1">
               <div className="flex flex-wrap md:w-1/2">
                 <div className="md:p-2 p-1 w-1/2">
                   <img
+                  onClick={()=>{setIndex(1)}}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
                     src="/img/sailor/sailor_ (16).jpg"
@@ -60,6 +79,7 @@ const Index = () => {
                 </div>
                 <div className="md:p-2 p-1 w-1/2">
                   <img
+                  onClick={()=>{setIndex(2)}}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
                     src="/img/sailor/sailor_ (2).jpg"
@@ -67,6 +87,7 @@ const Index = () => {
                 </div>
                 <div className="md:p-2 p-1 w-full">
                   <img
+                  onClick={()=>{setIndex(3)}}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full h-full object-cover object-center block"
                     src="/img/sailor/sailor_ (17).jpg"
@@ -76,6 +97,7 @@ const Index = () => {
               <div className="flex flex-wrap md:w-1/2">
                 <div className="md:p-2 p-1 w-full">
                   <img
+                  onClick={()=>{setIndex(4)}}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full h-full object-cover object-center block"
                     src="/img/sailor/sailor_-(30).jpg"
@@ -83,6 +105,7 @@ const Index = () => {
                 </div>
                 <div className="md:p-2 p-1 w-1/2">
                   <img
+                  onClick={()=>{setIndex(5)}}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
                     src="/img/sailor/sailor_ (21).jpg"
@@ -90,6 +113,7 @@ const Index = () => {
                 </div>
                 <div className="md:p-2 p-1 w-1/2">
                   <img
+                  onClick={()=>{setIndex(6)}}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
                     src="/img/sailor/SHA_6251.JPG"
@@ -148,11 +172,10 @@ const Index = () => {
                       </svg>
                     </div>
                     <h6 className="mb-2 font-semibold leading-5">
-                      The quick, brown fox jumps over a lazy dog
+                    Dining
                     </h6>
-                    <p className="text-sm text-gray-900">
-                      Baseball ipsum dolor sit amet cellar rubber win hack
-                      tossed. Slugging catcher slide bench league.
+                    <p className="text-sm text-gray-900 text-justify">
+                    The Sailor Moon Resort, Saint Martin in Cox's Bazar offers a diverse and tantalizing dining experience, featuring an array of delectable cuisines picturesque dining settings overlooking the stunning beach. 
                     </p>
                   </div>
                 </div>
@@ -173,11 +196,10 @@ const Index = () => {
                     </svg>
                   </div>
                   <h6 className="mb-2 font-semibold leading-5">
-                    A flower in my garden, a mystery
+                  BBQ & Party
                   </h6>
-                  <p className="text-sm text-gray-900">
-                    They urge you to put down your sword and come join the
-                    winners.
+                  <p className="text-sm text-gray-900 text-justify">
+                  The Sailor Moon Resort, Saint Martin in Cox's Bazar offers an enticing BBQ and party experience, providing guests with delectable grilled delights and a vibrant atmosphere, creating memorable moments for gatherings and celebrations.
                   </p>
                 </div>
                 <div>
@@ -197,11 +219,10 @@ const Index = () => {
                     </svg>
                   </div>
                   <h6 className="mb-2 font-semibold leading-5">
-                    Skate ipsum dolor sit amet, alley oop
+                  Resting Area
                   </h6>
-                  <p className="text-sm text-gray-900">
-                    If one examines precultural libertarianism, one is faced
-                    with a choice: either accept rationalism.
+                  <p className="text-sm text-gray-900 text-justify">
+                  The Sailor Moon Resort, Saint Martin in Cox's Bazar offers a calm and pleasant resting space where visitors may unwind and relax while taking in the spectacular views of the coastline.
                   </p>
                 </div>
                 <div>
@@ -221,16 +242,16 @@ const Index = () => {
                     </svg>
                   </div>
                   <h6 className="mb-2 font-semibold leading-5">
-                    The first mate and his Skipper too will
+                  Beach Activities
                   </h6>
-                  <p className="text-sm text-gray-900">
-                    Those options are already baked in with this model shoot me
-                    an email clear blue water.
+                  <p className="text-sm text-gray-900 text-justify">
+                  The Sailor Moon Resort, Saint Martin in Cox's Bazar offers a plethora of beach activities, including sunbathing, swimming, beach volleyball ensuring a fun-filled and rejuvenating experience for all guests.
                   </p>
                 </div>
               </div>
               <div>
                 <img
+                onClick={()=>{setIndex(7)}}
                   className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg object-cover w-full h-56 rounded  sm:h-96"
                   src="/img/sailor/SHA_6244 copy.jpg"
                   alt=""

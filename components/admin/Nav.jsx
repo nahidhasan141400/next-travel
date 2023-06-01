@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React from "react";
+import axios from 'axios';
 import { toast } from "react-toastify";
 const Nav = () => {
   const router = useRouter()
@@ -47,8 +48,8 @@ const Nav = () => {
         >Settings</a></li>
         <li><p 
         onClick={()=>{
-          document.cookie = "sort=''";
-          router.push('/Welcome/Admin/Login');
+          axios('/api/v1.0/logout')
+          router.push('/Welcome/Admin/login');
           setTimeout(()=>{
             window.location.reload();
           },2000)

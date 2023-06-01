@@ -176,7 +176,7 @@ const Form = ({ close, form }) => {
                 </label>
                 <input
                   onChange={(e) => {
-                    let nowDate = new window.Date();
+                    let nowDate = new window.Date(Date);
                     let newDate = new window.Date(nowDate.getTime() + 86400000);
 
                     let inpdate = new window.Date(e.target.value);
