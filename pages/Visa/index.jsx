@@ -10,11 +10,11 @@ useEffect(()=>{
   return (
     <Layout>
       <div className="w-full pt-24 pb-10 relative">
-        <div className="relative flex flex-col justify-center p-7 md:w-full h-72 bg-gradient-to-tr from-logoRay/40 to-logoSun max-w-6xl md:mx-auto rounded-2xl overflow-hidden lg:overflow-visible mx-2">
+        <div className="relative flex flex-col justify-center p-7 md:w-full h-96 md:h-72 bg-gradient-to-tr from-logoRay/40 to-logoSun max-w-6xl md:mx-auto rounded-2xl overflow-hidden lg:overflow-visible mx-2">
           <h1 className=" text-xl md:font-extrabold relative md:text-4xl md:-top-4 font-bold">
             We Provide The Best Visa Assistance
           </h1>
-          <p className="w-4/6 pt-2 md:text-base text-sm font-thin text-justify">
+          <p className="md:w-4/6 w-full pt-2 md:text-base text-sm font-thin text-justify">
             Our visa processing service is dedicated to giving our customers the
             best possible service. We place a high value on correctness and
             meticulousness throughout the whole procedure, making sure that all

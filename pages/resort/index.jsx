@@ -175,7 +175,7 @@ const Index = () => {
                     Dining
                     </h6>
                     <p className="text-sm text-gray-900 text-justify">
-                    The Sailor Moon Resort, Saint Martin in Cox's Bazar offers a diverse and tantalizing dining experience, featuring an array of delectable cuisines picturesque dining settings overlooking the stunning beach. 
+                    The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar offers a diverse and tantalizing dining experience, featuring an array of delectable cuisines picturesque dining settings overlooking the stunning beach. 
                     </p>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ const Index = () => {
                   BBQ & Party
                   </h6>
                   <p className="text-sm text-gray-900 text-justify">
-                  The Sailor Moon Resort, Saint Martin in Cox's Bazar offers an enticing BBQ and party experience, providing guests with delectable grilled delights and a vibrant atmosphere, creating memorable moments for gatherings and celebrations.
+                  The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar offers an enticing BBQ and party experience, providing guests with delectable grilled delights and a vibrant atmosphere, creating memorable moments for gatherings and celebrations.
                   </p>
                 </div>
                 <div>
@@ -222,7 +222,7 @@ const Index = () => {
                   Resting Area
                   </h6>
                   <p className="text-sm text-gray-900 text-justify">
-                  The Sailor Moon Resort, Saint Martin in Cox's Bazar offers a calm and pleasant resting space where visitors may unwind and relax while taking in the spectacular views of the coastline.
+                  The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar offers a calm and pleasant resting space where visitors may unwind and relax while taking in the spectacular views of the coastline.
                   </p>
                 </div>
                 <div>
@@ -245,7 +245,7 @@ const Index = () => {
                   Beach Activities
                   </h6>
                   <p className="text-sm text-gray-900 text-justify">
-                  The Sailor Moon Resort, Saint Martin in Cox's Bazar offers a plethora of beach activities, including sunbathing, swimming, beach volleyball ensuring a fun-filled and rejuvenating experience for all guests.
+                  The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar offers a plethora of beach activities, including sunbathing, swimming, beach volleyball ensuring a fun-filled and rejuvenating experience for all guests.
                   </p>
                 </div>
               </div>

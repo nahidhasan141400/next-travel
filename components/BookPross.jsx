@@ -147,7 +147,7 @@ export const BookPross = () => {
               </svg>
             </div>
             <p className="text-gray-600">
-            That's it now we will contact you shortly and provide booking confirmation
+            That&apos;s it now we will contact you shortly and provide booking confirmation
             </p>
           </div>
         </div>

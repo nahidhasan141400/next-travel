@@ -30,7 +30,7 @@ useEffect(()=>{
 
 
   return (
-    <div className="w-full h-screen flex justify-center flex-col items-center bg-img1">
+    <div className="w-full h-screen min-h-[700px] flex justify-center flex-col items-center bg-img1">
       <div className="w-full text-center flex flex-col justify-center items-center  relative h-full flex-2">
         <p className="font-2xl text-neutral-700">Take a Look at Our</p>
         <h1 className="text-4xl font-bold bg-gradient-to-t from-logoRay to-logoBlue text-transparent bg-clip-text">MOST POPULAR TOURS</h1>

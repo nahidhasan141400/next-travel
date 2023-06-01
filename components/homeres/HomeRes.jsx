@@ -23,7 +23,7 @@ const HomeRes = () => {
         </p>
         <img src="/img/sailor/sunholiday-w.jpg" alt="" />
       </div>
-      <div>
+      <div className="px-2 relative text-center sm:text-left">
         <p className="text-lg mt-5 text-justify">
         Sailor Moon Resorts, Saint Martin is situated at West Sea-Beach Konarpara, Saint Martin, Cox&#39;s Bazar, Bangladesh. We own this resort since 2022. Sailor Moon Resorts one of the finest resort in Saint Martin. With the varity of services Sailor Moon Resort try to provide the best value for money service to there customer. 100% Customer Satisfactory obtaining is our main goal.&nbsp;
         </p>

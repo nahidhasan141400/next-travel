@@ -36,7 +36,7 @@ const Discount = () => {
   }, []);
 
   return (
-    <div className='relative w-full h-screen bg-img3'>
+    <div className='relative w-full h-screen min-h-[700px]  bg-img3'>
       <div className="w-full h-full relative mx-auto flex flex-col ">
             <div className="w-full h-full py-10 mb-3 flex-2 flex justify-center items-center">
                 <p className="font-bold text-3xl md:text-4xl bg-gradient-to-tr from-logoSun to-logoTag text-transparent bg-clip-text">DEALS AND DISCOUNTS</p>
