@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import { FiMessageSquare } from "react-icons/fi";
+import { FaHandsHelping } from "react-icons/fa";
+import { GiIsland,GiTeamIdea } from "react-icons/gi";
+import { SiOpenstreetmap } from "react-icons/si";
+import { BsHeadset } from "react-icons/bs";
+import { CiBullhorn } from "react-icons/ci";
+import { BsBank } from "react-icons/bs";
 import MSG from "./teamsmsg/MSG";
 
 const BD = [
@@ -135,12 +141,75 @@ const Team = () => {
       </div>
 
       {/* team  */}
-     <div className="pb-20">
+     <div className="pb-20 w-full max-w-7xl mx-auto">
       <div className="w-full relative">
         <img className="w-full sm:w-7/12 mx-auto" src="/img/team/teamwork.png" alt="" />
       </div>
       <div className="w-full text-center">
             <h1 className="text-3xl font-bold capitalize">Valuable Teams</h1>
+      </div>
+      <div className="pt-5">
+        <p>At Sun Holidays Ltd, our valuable team consists of professionals in various designations, each playing a crucial role in ensuring exceptional service and unforgettable travel experiences for our clients. Here are some of the key designations within our team:</p>
+      </div>
+      <div className="w-full grid grid-cols-2 relative mt-7">
+        {/* card  */}
+        <div className="w-full flex mb-10 ">
+          <div className="text-9xl text-logoRay"><FaHandsHelping/></div>
+          <div className="ml-5 mr-12">
+            <p className="text-2xl font-bold">Travel Consultants</p>
+            <p className=" font-light text-justify"> Our knowledgeable travel consultants are experts in creating personalized itineraries, understanding client preferences, and providing valuable recommendations. They guide you through the planning process and assist in making informed decisions for your travel arrangements.</p>
+          </div>
+        </div>
+        {/* card  */}
+        <div className="w-full flex mb-10 ">
+          <div className="text-9xl text-logoRay"><GiIsland/></div>
+          <div className="ml-5 mr-12">
+            <p className="text-2xl font-bold">Tour Coordinators</p>
+            <p className=" font-light text-justify"> The tour coordinators are responsible for managing and organizing the logistics of your trip. From coordinating transportation and accommodations to arranging activities and excursions, they ensure a seamless and hassle-free travel experience.</p>
+          </div>
+        </div>
+        {/* card  */}
+        <div className="w-full flex mb-10 ">
+          <div className="text-9xl text-logoRay"><SiOpenstreetmap/></div>
+          <div className="ml-5 mr-12">
+            <p className="text-2xl font-bold">Destination Experts</p>
+            <p className=" font-light text-justify"> Our destination experts have an in-depth understanding of specific locations and can provide valuable insights, recommendations, and local expertise. They help curate unique experiences and ensure that you make the most of your time in each destination.</p>
+          </div>
+        </div>
+        {/* card  */}
+        <div className="w-full flex mb-10 ">
+          <div className="text-9xl text-logoRay"><BsHeadset/></div>
+          <div className="ml-5 mr-12">
+            <p className="text-2xl font-bold">Customer Service Representatives</p>
+            <p className=" font-light text-justify"> Our dedicated customer service representatives are here to assist you throughout your journey. They provide support, answer your queries, and address any concerns you may have before, during, and after your trip, ensuring your utmost satisfaction.</p>
+          </div>
+        </div>
+        {/* card  */}
+        <div className="w-full flex mb-10 ">
+          <div className="text-9xl text-logoRay"><GiTeamIdea/></div>
+          <div className="ml-5 mr-12">
+            <p className="text-2xl font-bold">Operations Team</p>
+            <p className=" font-light text-justify"> The operations team works behind the scenes to ensure smooth coordination and execution of travel arrangements. They liaise with local partners, manage bookings, and oversee the overall logistics to ensure a seamless travel experience.</p>
+          </div>
+        </div>
+        {/* card  */}
+        <div className="w-full flex mb-10 ">
+          <div className="text-9xl text-logoRay"><CiBullhorn/></div>
+          <div className="ml-5 mr-12">
+            <p className="text-2xl font-bold">Marketing and Communication Specialists</p>
+            <p className=" font-light text-justify">Our marketing and communication specialists are responsible for promoting our services, managing our online presence, and keeping our clients informed about the latest offers and updates. They ensure effective communication and engagement with our audience.</p>
+          </div>
+        </div>
+        {/* card  */}
+        <div className="w-full flex mb-10 ">
+          <div className="text-9xl text-logoRay"><BsBank/></div>
+          <div className="ml-5 mr-12">
+            <p className="text-2xl font-bold">Finance and Administration:</p>
+            <p className=" font-light text-justify">The finance and administration team handles financial transactions, accounting, and administrative tasks to ensure the smooth functioning of the company operations.</p>
+          </div>
+        </div>
+        {/* card  */}
+        
       </div>
      </div>
     </div>
