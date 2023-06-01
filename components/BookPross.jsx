@@ -70,7 +70,7 @@ export const BookPross = () => {
           </div>
           <div>
             <div className="flex items-center justify-between mb-6">
-              <p className="text-2xl font-bold">Step 2</p>
+              <p className="text-2xl font-bold"><span className="text-logoRay">Step</span> 2</p>
               <svg
                 className="w-6 text-gray-700 transform rotate-90 sm:rotate-0"
                 stroke="currentColor"
@@ -100,7 +100,7 @@ export const BookPross = () => {
           </div>
           <div>
             <div className="flex items-center justify-between mb-6">
-              <p className="text-2xl font-bold">Step 3</p>
+              <p className="text-2xl font-bold"><span className="text-logoRay">Step</span> 3</p>
               <svg
                 className="w-6 text-gray-700 transform rotate-90 sm:rotate-0"
                 stroke="currentColor"
