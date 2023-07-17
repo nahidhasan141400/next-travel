@@ -50,6 +50,24 @@ Once again, thank you for choosing us as your travel partner. We look forward to
 
     `,
   },
+  {
+    name: "Md. Ferdous",
+    des: "Director",
+    img: "/img/team/ferdusbio12.jpg",
+    msg: false,
+    magText: `
+    I hope this message finds you in good health and high spirits. As the  Director of Sun Holidays Ltd, I want to express my sincere appreciation for your trust and loyalty as one of our valued travelers. Your continued support means a great deal to us.
+
+    In the ever-changing landscape of the travel industry, we understand the importance of ensuring your safety, comfort, and satisfaction throughout your journey. Rest assured that our team is working tirelessly to meet these expectations and provide you with the best possible experience.
+    
+    We recognize that traveling in today's world requires extra caution and adaptability. That's why we have implemented robust health and safety measures to prioritize your well-being. Our staff is trained to adhere to these protocols diligently, ensuring a secure environment for all travelers.
+    
+    If you have any questions, concerns, or special requests, our dedicated customer service team is available around the clock to assist you. Please don't hesitate to reach out to them, as they are here to address any queries you may have and provide the necessary support.
+    
+    Once again, thank you for choosing Sun Holidays Ltd as your travel partner. We eagerly look forward to welcoming you on board and providing you with an exceptional travel experience that will create cherished memories for a lifetim
+
+    `,
+  },
 
   // {
   //   name: "Sayed Zillur Rahman",
@@ -70,7 +88,7 @@ Once again, thank you for choosing us as your travel partner. We look forward to
 const Team = () => {
   const [msg, setMasg] = useState();
   return (
-    <div>
+    <div className="webpatert2">
       {
         // msg?<MSG data={msg} close={setMasg}/>:""
       }

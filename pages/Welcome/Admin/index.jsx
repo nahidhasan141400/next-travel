@@ -24,6 +24,13 @@ const Index = ({ user }) => {
   {
     Header: "Name",
     accessor: "name",
+    Cell: (prop) => {
+      return (
+        <h1 dangerouslySetInnerHTML={{__html:prop.row.original.name}}>
+          
+        </h1>
+      );
+    },
   },
   {
     Header: "Photo",

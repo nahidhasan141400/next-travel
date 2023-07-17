@@ -46,9 +46,9 @@ useEffect(()=>{
           <div className="relative w-full h-full flex justify-center items-center">
             <div className="w-full max-w-7xl mx-auto flex justify-center items-center">
               <div className="w-3/4 h-32 glass relative top-10 rounded-lg flex justify-center items-center">
-                <h1 className="flex-2 text-2xl text-transparent px-3 text-center bg-gradient-to-tr from-logoTag to-logoBlue bg-clip-text font-bold capitalize">
-                  {data ? data.name : "data is loading ...."}
-                </h1>
+                  {data ? (<h1 className="flex-2 text-2xl text-transparent px-3 text-center bg-gradient-to-tr from-logoTag to-logoBlue bg-clip-text font-bold capitalize" dangerouslySetInnerHTML={{__html:data.name}}>
+                </h1>) : "data is loading ...."}
+                
                 <div className="flex-1 h-full w-1/4 relative">
                   <img
                     className="w-52 absolute bottom-0"
@@ -66,9 +66,9 @@ useEffect(()=>{
           {/* imfo fast  */}
           <div className="w-full relative py-7 bg-travel min-h-screen">
             <div className="w-full max-w-6xl mx-auto backdrop-blur-sm p-4 ">
-              <h1 className="text-3xl drop-shadow-md  font-bold capitalize text-transparent bg-gradient-to-tr from-logoBlue to-logoTag bg-clip-text">
-                {data ? data.name : "data is loading ...."}
-              </h1>
+              
+                {data ? (<h1 className="text-3xl drop-shadow-md  font-bold capitalize text-transparent bg-gradient-to-tr from-logoBlue to-logoTag bg-clip-text" dangerouslySetInnerHTML={{__html:data.name}}></h1>) : "data is loading ...."}
+             
 
               <p className="flex items-center text-lg text-neutral-700 ">
                 <span className="text-logoTag text-xl pr-1">

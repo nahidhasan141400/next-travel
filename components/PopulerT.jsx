@@ -14,7 +14,6 @@ import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 const PopulerT = () => {
 
 const [data,setData] = useState([]);
-
 useEffect(()=>{
   const getData = async ()=>{
     try {
@@ -63,7 +62,8 @@ useEffect(()=>{
             modules={[EffectCoverflow,Autoplay, Pagination]}
             className="mySwiper"
           >
-           { data.map((e, i) => {
+           
+           { [...data].splice(0,15).map((e, i) => {
               return (
                 <SwiperSlide key={i} style={{
 

@@ -14,8 +14,7 @@ const Card = ({data}) => {
       </Link>
       <div className="px-5 pb-5">
         <Link href={`/Tour/${data.id}`}>
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            {data.titel}
+          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white" dangerouslySetInnerHTML={{__html:data.titel}}>
           </h5>
           <p className="flex items-center w-full">
             <span className="pr-1 text-logoSun">
@@ -27,7 +26,7 @@ const Card = ({data}) => {
        
         <div className="flex items-center justify-between">
           <span className="text-3xl font-bold text-gray-900 dark:text-white">
-          <span className="text-5xl relative top-1"></span> {data.price} Tk.
+          <span className="text-5xl relative top-1"></span> {data.price}
           </span>
           <Link
             href={`/Tour/${data.id}`}

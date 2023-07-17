@@ -85,7 +85,9 @@ export default function App({ Component, pageProps }: AppProps) {
       ></Script>
 
       <ToastContainer />
-      <Component {...pageProps} />
+      <div className="dark:text-black">
+          <Component {...pageProps} />
+      </div>
     </Loader>
   );
 }

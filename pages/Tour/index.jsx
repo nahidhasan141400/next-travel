@@ -2,22 +2,26 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import Card from "../../components/util/Card";
+import Link from "next/link";
 
 const Index = () => {
+  const [data, Setdata] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const serverRes = await axios("/api/v1.0/tour");
+        console.log(
+          "🚀 ~ file: index.jsx:13 ~ getData ~ serverRes:",
+          serverRes.data
+        );
 
-  const [data,Setdata] = useState([])
-useEffect(()=>{
-  const getData = async ()=>{
-    try {
-      const serverRes = await axios("/api/v1.0/tour");
-// console.log(serverRes.data);
-      Setdata(serverRes.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  getData()
-},[])
+        Setdata(serverRes.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
+  }, []);
   return (
     <Layout>
       <section className="bg-white pt-20">
@@ -34,25 +38,44 @@ useEffect(()=>{
           <div className="flex flex-wrap -m-4 text-center">
             <div className="p-4 sm:w-1/4 w-1/2">
               <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-              {data.filter((e)=>(e.catagory === "package")).length}
+                {
+                  data.filter(
+                    (e) => JSON.parse(e.catagory).indexOf("package") !== -1
+                  ).length
+                }
               </h2>
               <p className="leading-relaxed">Package Tour</p>
             </div>
             <div className="p-4 sm:w-1/4 w-1/2">
               <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-              {data.filter((e)=>(e.catagory === "group")).length}
+                {
+                  data.filter(
+                    (e) => JSON.parse(e.catagory).indexOf("group") !== -1
+                  ).length
+                }
+                {/* {data.filter((e)=>(e.catagory === "group")).length} */}
               </h2>
               <p className="leading-relaxed">Group Tour</p>
             </div>
             <div className="p-4 sm:w-1/4 w-1/2">
               <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-              {data.filter((e)=>(e.catagory === "family")).length}
+                {
+                  data.filter(
+                    (e) => JSON.parse(e.catagory).indexOf("family") !== -1
+                  ).length
+                }
+                {/* {data.filter((e)=>(e.catagory === "family")).length} */}
               </h2>
               <p className="leading-relaxed">Family Tour</p>
             </div>
             <div className="p-4 sm:w-1/4 w-1/2">
               <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-              {data.filter((e)=>(e.catagory === "corporate")).length}
+                {
+                  data.filter(
+                    (e) => JSON.parse(e.catagory).indexOf("corporate") !== -1
+                  ).length
+                }
+                {/* {data.filter((e)=>(e.catagory === "corporate")).length} */}
               </h2>
               <p className="leading-relaxed">Corporate Tour</p>
             </div>
@@ -79,14 +102,20 @@ useEffect(()=>{
         <Card />
         <Card />
         <Card /> */}
-         {
-          data.filter((x)=>(x.catagory == "package")).map((e,i)=>{
-            return (
-              <Card key={i} data={e}/>
-            )
-          })
-        }
+        {data
+          .filter((e) => JSON.parse(e.catagory).indexOf("package") !== -1)
+          .splice(0, 6)
+          .map((e, i) => {
+            return <Card key={i} data={e} />;
+          })}
       </section>
+      <div className="w-full py-4 text-center mb-5">
+        <Link href={`/Tour/more/package`}>
+          <button className="btn-secondary btn-outline btn">
+            See More Package Tour
+          </button>
+        </Link>
+      </div>
       {/*  Package Tour end  */}
       {/*  Group Tour start  */}
       <section className="text-gray-600 body-font">
@@ -103,16 +132,20 @@ useEffect(()=>{
       </section>
       {/* card row  */}
       <section className="w-full px-3 max-w-7xl flex justify-between flex-wrap mx-auto">
-        {
-          data.filter((x)=>(x.catagory == "group")).map((e,i)=>{
-            return (
-              <Card key={i} data={e}/>
-            )
-          })
-        }
-     
-        
+        {data
+          .filter((e) => JSON.parse(e.catagory).indexOf("group") !== -1)
+          .splice(0, 6)
+          .map((e, i) => {
+            return <Card key={i} data={e} />;
+          })}
       </section>
+      <div className="w-full py-4 text-center mb-5">
+        <Link href={`/Tour/more/group`}>
+          <button className="btn-secondary btn-outline btn">
+            See More Group Tour
+          </button>
+        </Link>
+      </div>
       {/*  Group Tour end  */}
       {/*  Family Tour start  */}
       <section className="text-gray-600 body-font">
@@ -132,14 +165,20 @@ useEffect(()=>{
         {/* <Card />
         <Card />
         <Card /> */}
-         {
-          data.filter((x)=>(x.catagory == "family")).map((e,i)=>{
-            return (
-              <Card key={i} data={e}/>
-            )
-          })
-        }
+        {data
+          .filter((e) => JSON.parse(e.catagory).indexOf("family") !== -1)
+          .splice(0, 6)
+          .map((e, i) => {
+            return <Card key={i} data={e} />;
+          })}
       </section>
+      <div className="w-full py-4 text-center mb-5">
+        <Link href={`/Tour/more/family`}>
+          <button className="btn-secondary btn-outline btn">
+            See More Family Tour
+          </button>
+        </Link>
+      </div>
       {/*  Family Tour end  */}
       {/*  Corporate Tour start  */}
       <section className="text-gray-600 body-font">
@@ -159,23 +198,30 @@ useEffect(()=>{
         {/* <Card />
         <Card />
         <Card /> */}
-           {
-          data.filter((x)=>(x.catagory == "corporate")).map((e,i)=>{
-            return (
-              <Card key={i} data={e}/>
-            )
-          })
-        }
+
+        {data
+          .filter((e) => JSON.parse(e.catagory).indexOf("corporate") !== -1)
+          .splice(0, 6)
+          .map((e, i) => {
+            return <Card key={i} data={e} />;
+          })}
       </section>
+      <div className="w-full py-4 text-center mb-5">
+        <Link href={`/Tour/more/corporate`}>
+          <button className="btn-secondary btn-outline btn">
+            See More Corporate Tour
+          </button>
+        </Link>
+      </div>
       {/*  Corporate Tour end  */}
       {/* news later  */}
       <div
         className="w-full bg-logoRay mt-20"
         style={{
-          backgroundImage:"url('/img/kuyakata.jpg')",
-          backgroundPosition:"center",
-          backgroundBlendMode:"multiply",
-          backgroundSize:"cover"
+          backgroundImage: "url('/img/kuyakata.jpg')",
+          backgroundPosition: "center",
+          backgroundBlendMode: "multiply",
+          backgroundSize: "cover",
         }}
         // style="background-image: ; background-position: center center; background-blend-mode: multiply; background-size: cover;"
       >

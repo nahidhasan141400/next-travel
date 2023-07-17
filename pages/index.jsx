@@ -9,7 +9,8 @@ import Layout from "../components/Layout";
 import PopulerT from "../components/PopulerT";
 import WhyYCU from "../components/WhyYCU";
 import HomeRes from "../components/homeres/HomeRes"
-
+import Dental from '../components/DENTAL/Dental';
+import Haz from "../components/haz&omrah/Haz"
 const index = () => {
   return (
     <div>
@@ -17,12 +18,14 @@ const index = () => {
         <Hero/>
         {/* <Category/> */}
         <AccseesPatner/>
-        <PopulerT/>
+        <Haz/>
         <HomeRes/>
         <WhyYCU/>
         <BookPross/>
+        <Dental/>
         {/* <BusnesStat/> */}
-        <Discount/>
+        <PopulerT/>
+        {/* <Discount/> */}
         <Affiliate/>  
       </Layout>
     </div>

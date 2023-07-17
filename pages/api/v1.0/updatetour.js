@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     seoDes,
     type,
     catagory,
-    // tag,
+    tag,
     dur,
     description,
     // photo,
@@ -55,7 +55,7 @@ export default async function handler(req, res) {
       const DataBase = await DBcon();
       const { connection } = DataBase;
 
-        const sql = `UPDATE tour SET name = '${name}', titel = '${titel}', log = 'chaing by - ${cart.email}', details = '${description}', price = '${price}', fromlink = '${fromLink}', meta = '${seoDes}', types = '${type}', catagory = '${catagory}', dur = '${dur}' WHERE tour.id = "${id}";`
+        const sql = `UPDATE tour SET name = '${name}', titel = '${titel}', log = 'chaing by - ${cart.email}', details = '${description}', price = '${price}', fromlink = '${fromLink}',tag = '${tag}', meta = '${seoDes}', types = '${type}', catagory = '${catagory}', dur = '${dur}' WHERE tour.id = "${id}";`
 
 
       const [datafromDB] = await connection.execute(sql);

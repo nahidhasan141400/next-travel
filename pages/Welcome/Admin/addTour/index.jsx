@@ -8,8 +8,9 @@ import CreatableSelect from "react-select/creatable";
 import { toast } from "react-toastify";
 import ImgApi from "../../../../components/ImgApi";
 import Nav from "../../../../components/admin/Nav";
-import DBcon from '../../../../database/connection';
+import DBcon from "../../../../database/connection";
 import SqlFormate from "../../../../lib/SqlFormater";
+import Select from "react-select";
 
 import jwt from "jsonwebtoken";
 
@@ -17,133 +18,132 @@ const JoditEditor = dynamic(import("jodit-react"), {
   ssr: false,
   loading: () => <p>Loading ...</p>,
 });
- let placeholder = "type";
+let placeholder = "type";
 
 const Index = () => {
   const [inputValue, setInputValue] = React.useState("");
   const [value, setValue] = React.useState([]);
   const editor = useRef(null);
   const [content, setContent] = useState("");
-  const [load,SetLoad] = useState(false);
+  const [load, SetLoad] = useState(false);
 
-  // form data handler 
+  // form data handler
 
-  const [titel,setTitel] = useState();
-  const [name,setName] = useState();
-  const [price,setPrice] = useState();
-  const [fromLink,setfromLink] = useState();
-  const [seoDes,setSeoDes] = useState();
-  const [type,setType] = useState();
-  const [catagory,setCatagory] = useState();
-  const [tag,setTag] = useState();
-  const [dur,setdur] = useState();
-  // photo 
-  const [img1,setImg1] = useState();
-  const [img2,setImg2] = useState();
-  const [img3,setImg3] = useState();
-  const [img4,setImg4] = useState();
-  const [img5,setImg5] = useState();
-  const [img6,setImg6] = useState();
-  // Description 
-  const [description,setDescription] = useState();
-  // from submit handler 
-  const save = ()=>{
-    if(load){
+  const [titel, setTitel] = useState();
+  const [name, setName] = useState();
+  const [price, setPrice] = useState();
+  const [fromLink, setfromLink] = useState();
+  const [seoDes, setSeoDes] = useState();
+  const [type, setType] = useState();
+  const [catagory, setCatagory] = useState();
+  const [tag, setTag] = useState();
+  const [dur, setdur] = useState();
+  // photo
+  const [img1, setImg1] = useState();
+  const [img2, setImg2] = useState();
+  const [img3, setImg3] = useState();
+  const [img4, setImg4] = useState();
+  const [img5, setImg5] = useState();
+  const [img6, setImg6] = useState();
+  // Description
+  const [description, setDescription] = useState();
+  // from submit handler
+  const save = () => {
+    if (load) {
       return;
     }
     SetLoad(true);
-    const saveData = async()=>{
+    const saveData = async () => {
       try {
         console.log("start");
         const imgBody = new FormData();
-        imgBody.append("photos",img1)
-        imgBody.append("photos",img2)
-        imgBody.append("photos",img3)
-        imgBody.append("photos",img4)
-        imgBody.append("photos",img5)
-        imgBody.append("photos",img6)
+        imgBody.append("photos", img1);
+        imgBody.append("photos", img2);
+        imgBody.append("photos", img3);
+        imgBody.append("photos", img4);
+        imgBody.append("photos", img5);
+        imgBody.append("photos", img6);
 
-
-  
-        const uploadphotoRes = await axios.post(ImgApi+"/uploads",imgBody,{
+        const uploadphotoRes = await axios.post(ImgApi + "/uploads", imgBody, {
           headers: {
             token: "imgauth",
             cc: getCookie("sort"),
           },
-        })
-        if(uploadphotoRes.status !== 200){
-          SetLoad(false)
-          return toast.error("somethin wrong with img server!")
+        });
+        if (uploadphotoRes.status !== 200) {
+          SetLoad(false);
+          return toast.error("somethin wrong with img server!");
         }
         const photodata = uploadphotoRes.data.name;
-       
-        const payloadBody =  {
-          titel:titel,
-          name:name,
-          price:price,
-          fromLink:fromLink,
-          seoDes:SqlFormate(seoDes),
-          type:type,
-          catagory:catagory,
+
+        const payloadBody = {
+          titel: SqlFormate(titel),
+          name: SqlFormate(name),
+          price: price,
+          fromLink: fromLink,
+          seoDes: SqlFormate(seoDes),
+          type: type,
+          catagory: JSON.stringify(catagory),
           tag,
           description: SqlFormate(description),
-          dur:dur,
-          photo:JSON.stringify(photodata.map((e)=>{
-            return e.filename
-          }))
-  
+          dur: dur,
+          photo: JSON.stringify(
+            photodata.map((e) => {
+              return e.filename;
+            })
+          ),
         };
-        
-        const saveDataToDB = await axios.post("/api/v1.0/tour",payloadBody);
-        
-        toast.success("Product save!")
+
+        const saveDataToDB = await axios.post("/api/v1.0/tour", payloadBody);
+
+        toast.success("Product save!");
         Router.push("/Welcome/Admin");
       } catch (error) {
         console.log(error);
-        SetLoad(false)
-        toast.error("some thing is Wrong !!")
+        SetLoad(false);
+        toast.error("some thing is Wrong !!");
       }
-    }
+    };
     saveData();
-  }
-  
+  };
+
   return (
     <div className="w-full relative">
       <Nav />
-      <form onSubmit={(e)=>{
-        e.preventDefault();
-        save();
-      }}>
-
-      
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          save();
+        }}
+      >
         <div className=" p-10 text-center">
-          <h1 className="text-2xl font-bold capitalize">Add New Tour pakedge </h1>
+          <h1 className="text-2xl font-bold capitalize">
+            Add New Tour pakedge{" "}
+          </h1>
         </div>
         <div>
           <div className="w-full flex justify-center max-w-7xl mx-auto my-2">
             <div className="flex-1 flex justify-center ">
               <input
                 value={titel}
-                onChange={(e)=>{
-                  setTitel(e.target.value)
+                onChange={(e) => {
+                  setTitel(e.target.value);
                 }}
                 type="text"
-                 required
+                required
                 placeholder="Titel*"
-           
                 className="input input-bordered w-11/12  mx-auto"
               />
             </div>
             <div className="flex-1 flex justify-center">
               <input
-              value={name}
-              onChange={(e)=>{
-                setName(e.target.value)
-              }}
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
                 type="text"
-                 required
+                required
                 placeholder="Name*"
-             
                 className="input input-bordered w-11/12 mx-auto"
               />
             </div>
@@ -151,27 +151,25 @@ const Index = () => {
           <div className="w-full flex justify-center max-w-7xl mx-auto my-2">
             <div className="flex-1 flex justify-center">
               <input
-              value={price}
-              onChange={(e)=>{
-                setPrice(e.target.value)
-              }}
+                value={price}
+                onChange={(e) => {
+                  setPrice(e.target.value);
+                }}
                 type="text"
-                 required
+                required
                 placeholder="price*"
-           
                 className="input input-bordered w-11/12  mx-auto"
               />
             </div>
             <div className="flex-1 flex justify-center">
               <input
-              value={fromLink}
-              onChange={(e)=>{
-                setfromLink(e.target.value)
-              }}
+                value={fromLink}
+                onChange={(e) => {
+                  setfromLink(e.target.value);
+                }}
                 type="text"
-                 required
+                required
                 placeholder="Book Link*"
-              
                 className="input input-bordered w-11/12 mx-auto"
               />
             </div>
@@ -179,73 +177,92 @@ const Index = () => {
           <div className="w-full flex justify-center max-w-7xl mx-auto my-2">
             <div className="flex-1 flex justify-center">
               <input
-              value={seoDes}
-              onChange={(e)=>{
-                setSeoDes(e.target.value)
-              }}
+                value={seoDes}
+                onChange={(e) => {
+                  setSeoDes(e.target.value);
+                }}
                 type="text"
-                 required
+                required
                 placeholder="description for seo*"
-              
                 className="input input-bordered w-11/12  mx-auto"
               />
             </div>
             <div className="flex-1 flex justify-center">
-            <select 
-              value={type}
-              onChange={(e)=>{
-                setType(e.target.value)
-              }}
-              required
-            className="input input-bordered w-11/12 mx-auto">
-              <option disabled selected>
-                Select Type
-              </option>
-              <option value="in" >In Bound</option>
-              <option value="out" >Out Bound</option>
-            </select>
+              <select
+                value={type}
+                onChange={(e) => {
+                  setType(e.target.value);
+                }}
+                required
+                className="input input-bordered w-11/12 mx-auto"
+              >
+                <option disabled selected>
+                  Select Type
+                </option>
+                <option value="in">In Bound</option>
+                <option value="out">Out Bound</option>
+              </select>
             </div>
-            
           </div>
           <div className="w-full flex justify-center max-w-7xl mx-auto my-2">
-            
             <div className="flex-1 flex justify-center">
-            <select 
-            value={catagory}
-            required
-            onChange={(e)=>{
-              setCatagory(e.target.value)
-            }}
-            className="input input-bordered w-11/12  mx-auto">
-              <option disabled selected>
-                Select Catagory
-              </option>
-              <option value="package" >Package Tour</option>
-              <option value="group" >Group Tour</option>
-              <option value="family" >Family Tour</option>
-              <option value="corporate" >Corporate Tour</option>
-            </select>
+          
+              <Select
+                isMulti
+                name="colors"
+                // value={
+                //   catagory? {label:catagory,value:catagory}
+                // }
+                required
+                options={[
+                  {
+                    label: "Package Tour",
+                    value: "package",
+                  },
+                  {
+                    label: "Group Tour",
+                    value: "group",
+                  },
+                  {
+                    label: "Family Tour",
+                    value: "family",
+                  },
+                  {
+                    label: "Corporate Tour",
+                    value: "corporate",
+                  },
+                  {
+                    label: "haz and omra",
+                    value: "hajj",
+                  },
+                ]}
+                onChange={(e) => {
+                  // console.log(e);
+                  setCatagory(e.map((x)=>x.value))
+                }}
+                className="w-11/12"
+                />
+               
+              {/* </Select> */}
             </div>
             <div className="flex-1 flex justify-center">
-            <input
-              value={dur}
-              onChange={(e)=>{
-                setdur(e.target.value)
-              }}
+              <input
+                value={dur}
+                onChange={(e) => {
+                  setdur(e.target.value);
+                }}
                 type="text"
-                 required
-                  placeholder="Tour Duration"
-              
+                required
+                placeholder="Tour Duration"
                 className="input input-bordered w-11/12 mx-auto"
               />
             </div>
-            
           </div>
           <div className="w-full flex justify-center max-w-7xl mx-auto my-2">
             <div className="flex-1 w-full mx-12">
               <CreatableSelect
-                 required
-               placeholder="Add tags.."
+                required
+                placeholder="Add tags.."
                 isMulti
                 options={[]}
                 onChange={(v) => setTag(v.map((e) => e.value))}
@@ -256,7 +273,9 @@ const Index = () => {
           <div className="w-full relative ">
             <div className="w-full text-center p-4  text-xl mt-8 capitalize">
               <h2> Add images </h2>
-              <p className="text-xs text-logoTag italic capitalize">(please add optimize photo)</p>
+              <p className="text-xs text-logoTag italic capitalize">
+                (please add optimize photo)
+              </p>
             </div>
             <div className="w-full max-w-7xl mx-auto  flex justify-around items-center mb-2 ">
               <input
@@ -269,19 +288,17 @@ const Index = () => {
                 className="file-input file-input-bordered w-full max-w-xs"
               />
               <input
-              onChange={(e) => {
-                setImg2(e.target.files[0]);
-              }}
-              
+                onChange={(e) => {
+                  setImg2(e.target.files[0]);
+                }}
                 type="file"
                 accept="image/png, image/gif, image/jpeg"
                 className="file-input file-input-bordered w-full max-w-xs"
               />
               <input
-              onChange={(e) => {
-                setImg3(e.target.files[0]);
-              }}
-              
+                onChange={(e) => {
+                  setImg3(e.target.files[0]);
+                }}
                 type="file"
                 accept="image/png, image/gif, image/jpeg"
                 className="file-input file-input-bordered w-full max-w-xs"
@@ -289,28 +306,29 @@ const Index = () => {
             </div>
             <div className="w-full max-w-7xl mx-auto  flex justify-around items-center mb-2">
               <input
-              onChange={(e) => {
-                setImg4(e.target.files[0]);
-              }}
+                onChange={(e) => {
+                  setImg4(e.target.files[0]);
+                }}
                 type="file"
                 accept="image/png, image/gif, image/jpeg"
                 className="file-input file-input-bordered w-full max-w-xs"
               />
               <input
-              onChange={(e) => {
-                setImg5(e.target.files[0]);
-              }}
+                onChange={(e) => {
+                  setImg5(e.target.files[0]);
+                }}
                 type="file"
                 accept="image/png, image/gif, image/jpeg"
                 className="file-input file-input-bordered w-full max-w-xs"
               />
-              
             </div>
           </div>
         </div>
         <div className="w-full pt-10 pb-5 text-center  text-xl mt-8 capitalize">
           <h2>Tour Description</h2>
-          <p className="text-xs text-logoTag italic capitalize">(things about responsiveness)</p>
+          <p className="text-xs text-logoTag italic capitalize">
+            (things about responsiveness)
+          </p>
         </div>
         <div className=" flex justify-center items-center mx-10">
           <Resizable
@@ -333,8 +351,18 @@ const Index = () => {
           </Resizable>
         </div>
         <div className="w-full max-w-7xl mx-auto p-8 mb-11 flex justify-between ">
-        <button type="button" onClick={()=>{Router.back()}} className="btn btn-error">Back to Dashboard</button>
-          <button className={`btn btn-success  ${load?"loading":""}`}>Add Tour </button>
+          <button
+            type="button"
+            onClick={() => {
+              Router.back();
+            }}
+            className="btn btn-error"
+          >
+            Back to Dashboard
+          </button>
+          <button className={`btn btn-success  ${load ? "loading" : ""}`}>
+            Add Tour{" "}
+          </button>
         </div>
       </form>
     </div>
@@ -343,17 +371,16 @@ const Index = () => {
 
 export default Index;
 
-
 export const getServerSideProps = async (ctx) => {
   let { sort } = ctx.req.cookies;
-  
+
   let err = null;
   let Props = {
     user: null,
   };
   try {
     var decoded = jwt.verify(sort, process.env.JWTT);
-   
+
     try {
       const DataBase = await DBcon();
       const { connection } = DataBase;

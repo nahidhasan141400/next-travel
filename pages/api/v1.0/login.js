@@ -12,10 +12,11 @@ export default async function handler(req, res) {
      console.log(req.body)
       const DataBase = await DBcon();
       const { connection } = DataBase;
+      
       const [userInDb] = await connection.execute(
         `SELECT * FROM admin WHERE user = '${email}'`
       );
-
+     
       if (!userInDb.length) {
         connection.end();
         res.status(500);
