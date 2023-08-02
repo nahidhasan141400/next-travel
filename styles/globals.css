@@ -84,6 +84,13 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+.bg-bd3 {
+  background-image: url(/img/sailor/sunholiday-w.jpg);
+  background-color: rgba(228, 255, 249, 0.356);
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: center;
+}
 .sw .swiper {
   width: 100%;
   padding-top: 50px;

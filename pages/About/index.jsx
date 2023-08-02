@@ -15,7 +15,7 @@ const Index = () => {
     <div>
       <Layout>
         <div className="w-full ">
-          <AboutBaner i={1} text={"About us"} />
+          <AboutBaner i={3} text={"About us"} />
         </div>
 
         {/* tabs */}

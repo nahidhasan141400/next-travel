@@ -47,9 +47,9 @@ useEffect(()=>{
        <div className="w-full h-full relative md:ml-2">
         <p className="font-light text-justify mt-20 md:text-xl text-lg px-3 ">Sun Holidays Ltd. not only provides the best Umrah packages from Bangladesh, but also ensures that you complete your long-awaited travel to the two holy cities of Makkah and Madinah. Our most skilled and experienced Mu&#39;allim will accompany you the entire journey.</p>
         <ul className="font-light  mt-3 list-none text-xl">
-          <li className="list-icon">14 days</li>
+          <li className="list-icon">12* days</li>
           <li className="list-icon">Visa, Air ticket, Transport & Ziyarah</li>
-          <li className="list-icon">Accommodation in Makkah & Madinah</li>
+          <li className="list-icon">Accommodation in Makkah & Madinah</li> 
         </ul>
         <a href="tel:8801873838301" className="btn btn-outline btn-warning mt-20">
           Call For More Details

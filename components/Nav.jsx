@@ -52,8 +52,8 @@ const Nav = () => {
     <div className="nav">
       <div
         className={`${
-          nav ? "h-screen md:h-17" : "h-0"
-        } z-50  w-full backdrop-blur-sm  border-b-1 bg-neutral-800/20 shadow-sm fixed transition-all duration-200 ease-in-out overflow-hidden`}
+          nav ? "h-screen md:h-17 " : "h-0 overflow-hidden"
+        } z-50  w-full backdrop-blur-sm  border-b-1 bg-neutral-800/20 shadow-sm fixed transition-all duration-200 ease-in-out `}
       >
         <div className=" absolute top-2 right-6 ">
           <button
@@ -69,19 +69,65 @@ const Nav = () => {
         </div>
         <div className="w-full py-4 max-w-7xl h-full mx-auto ">
           <ol className="flex items-center h-full justify-center flex-col md:flex-row">
-            { Items.map((e, i) => {
-              return (
-                <li key={i}>
-                  <Link href={e.src}>
-                    <p className="flex m-2 items-center transition-all duration-1000  text-sm ease-in-out py-2 bg-cyan-600 w-32 justify-center md:w-auto md:bg-cyan-200/20 px-4  capitalize rounded-md text-logoSun hover:text-base-100 hover:font-bold hover:bg-logoSun shadow-lg ">
-                      <span className="text-md mr-1">
-                        <e.icon />
-                      </span>
-                      {e.name}
-                    </p>
-                  </Link>
-                </li>
-              );
+            {Items.map((e, i) => {
+              if (e.name === "Tour") {
+                return (
+                  <li key={i}>
+                    <div className="dropdown">
+                      <label
+                        tabIndex={0}
+                        className="flex m-2 items-center transition-all duration-1000  text-sm ease-in-out py-2 bg-cyan-600 w-32 justify-center md:w-auto md:bg-cyan-200/20 px-4  capitalize rounded-md text-logoSun hover:text-base-100 font-bold hover:bg-logoSun shadow-lg cursor-pointer"
+                      >
+                        <span className="text-md mr-1">
+                          <e.icon />
+                        </span>
+                        {e.name}
+                      </label>
+                      <ul
+                        tabIndex={0}
+                        className="dropdown-content z-[300] menu p-2 shadow bg-base-100 rounded-box w-52"
+                      >
+                        <li>
+                          <Link href={`/Tour/package/international`}>
+                            International
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href={`/Tour/package/domestic`}>Domestic</Link>
+                        </li>
+                        <li>
+                          <Link href={`/Tour/more/hajj`}>Hajj & Umrah</Link>
+                        </li>
+                        <li>
+                          <Link href={`/Tour`}>All packages</Link>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* <Link href={e.src}>
+                      <p className="flex m-2 items-center transition-all duration-1000  text-sm ease-in-out py-2 bg-cyan-600 w-32 justify-center md:w-auto md:bg-cyan-200/20 px-4  capitalize rounded-md text-logoSun hover:text-base-100 font-bold hover:bg-logoSun shadow-lg ">
+                        <span className="text-md mr-1">
+                          <e.icon />
+                        </span>
+                        {e.name} 
+                      </p>
+                    </Link> */}
+                  </li>
+                );
+              } else {
+                return (
+                  <li key={i}>
+                    <Link href={e.src}>
+                      <p className="flex m-2 items-center transition-all duration-1000  text-sm ease-in-out py-2 bg-cyan-600 w-32 justify-center md:w-auto md:bg-cyan-200/20 px-4  capitalize rounded-md text-logoSun hover:text-base-100 font-bold hover:bg-logoSun shadow-lg ">
+                        <span className="text-md mr-1">
+                          <e.icon />
+                        </span>
+                        {e.name}
+                      </p>
+                    </Link>
+                  </li>
+                );
+              }
             })}
           </ol>
         </div>

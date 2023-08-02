@@ -51,8 +51,8 @@ Once again, thank you for choosing us as your travel partner. We look forward to
     `,
   },
   {
-    name: "Md. Ferdous",
-    des: "Director",
+    name: "Md. Ferdous ",
+    des: "Deputy Managing Director",
     img: "/img/team/ferdusbio12.jpg",
     msg: false,
     magText: `
@@ -120,7 +120,7 @@ const Team = () => {
                     <h1 className="text-2xl font-bold bg-gradient-to-t from-logoTag to-logoSun bg-clip-text text-transparent whitespace-nowrap">
                       {e.name}
                     </h1>
-                    <p className="text-neutral-600">{e.des}</p>
+                    <p className="text-neutral-600 whitespace-nowrap">{e.des}</p>
                     {e.msg ? (
                       <div
                         onClick={() => {
@@ -147,9 +147,9 @@ const Team = () => {
                     dangerouslySetInnerHTML={{ __html: e.magText }}
                   ></p>
                   <div>
-                    <p className="mt-3 font-bold">Warmest regards,</p>
-                    <p className="text-sm ">{e.name}</p>
-                    <p className="text-sm font-light">{e.des}</p>
+                    <p className="mt-3 ">Warmest regards,</p>
+                    <p className="text-md font-bold ">{e.name}</p>
+                    <p className="text-sm font-light whitespace-nowrap">{e.des}</p>
                   </div>
                 </div>
               </div>

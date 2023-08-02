@@ -44,7 +44,7 @@ const Index = () => {
                   ).length
                 }
               </h2>
-              <p className="leading-relaxed">Package Tour</p>
+              <p className="leading-relaxed">Package  Tour</p>
             </div>
             <div className="p-4 sm:w-1/4 w-1/2">
               <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
@@ -87,11 +87,11 @@ const Index = () => {
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto flex items-center md:flex-row flex-col">
           <div className="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
-            <h2 className="text-xs text-logoSun tracking-widest font-medium title-font mb-1">
+            {/* <h2 className="text-xs text-logoSun tracking-widest font-medium title-font mb-1">
               Browse Our Best
-            </h2>
+            </h2> */}
             <h1 className="md:text-4xl text-3xl font-medium title-font ">
-              Package Tour
+                <span className="font-bold text-logoSun">Domestic</span> tour packages
             </h1>
           </div>
         </div>
@@ -102,17 +102,20 @@ const Index = () => {
         <Card />
         <Card />
         <Card /> */}
+        {
+          console.log(data)
+        }
         {data
-          .filter((e) => JSON.parse(e.catagory).indexOf("package") !== -1)
+          .filter((e) => e.types === "in")
           .splice(0, 6)
           .map((e, i) => {
             return <Card key={i} data={e} />;
           })}
       </section>
       <div className="w-full py-4 text-center mb-5">
-        <Link href={`/Tour/more/package`}>
+        <Link href={`/Tour/package/domestic`}>
           <button className="btn-secondary btn-outline btn">
-            See More Package Tour
+            See More Package
           </button>
         </Link>
       </div>
@@ -121,11 +124,11 @@ const Index = () => {
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto flex items-center md:flex-row flex-col">
           <div className="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
-            <h2 className="text-xs text-logoSun tracking-widest font-medium title-font mb-1">
+            {/* <h2 className="text-xs text-logoSun tracking-widest font-medium title-font mb-1">
               Browse Our Best
-            </h2>
-            <h1 className="md:text-4xl text-3xl font-medium title-font ">
-              Group Tour
+            </h2> */}
+             <h1 className="md:text-4xl text-3xl font-medium title-font ">
+                <span className="font-bold text-logoSun">International</span> tour packages
             </h1>
           </div>
         </div>
@@ -133,62 +136,28 @@ const Index = () => {
       {/* card row  */}
       <section className="w-full px-3 max-w-7xl flex justify-between flex-wrap mx-auto">
         {data
-          .filter((e) => JSON.parse(e.catagory).indexOf("group") !== -1)
+          .filter((e) => e.types === "out")
           .splice(0, 6)
           .map((e, i) => {
             return <Card key={i} data={e} />;
           })}
       </section>
       <div className="w-full py-4 text-center mb-5">
-        <Link href={`/Tour/more/group`}>
+        <Link href={`/Tour/package/international`}>
           <button className="btn-secondary btn-outline btn">
-            See More Group Tour
+            See More Package
           </button>
         </Link>
       </div>
-      {/*  Group Tour end  */}
-      {/*  Family Tour start  */}
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto flex items-center md:flex-row flex-col">
-          <div className="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
-            <h2 className="text-xs text-logoSun tracking-widest font-medium title-font mb-1">
-              Browse Our Best
-            </h2>
-            <h1 className="md:text-4xl text-3xl font-medium title-font ">
-              Family Tour
-            </h1>
-          </div>
-        </div>
-      </section>
-      {/* card row  */}
-      <section className="w-full px-3 max-w-7xl flex justify-between flex-wrap mx-auto">
-        {/* <Card />
-        <Card />
-        <Card /> */}
-        {data
-          .filter((e) => JSON.parse(e.catagory).indexOf("family") !== -1)
-          .splice(0, 6)
-          .map((e, i) => {
-            return <Card key={i} data={e} />;
-          })}
-      </section>
-      <div className="w-full py-4 text-center mb-5">
-        <Link href={`/Tour/more/family`}>
-          <button className="btn-secondary btn-outline btn">
-            See More Family Tour
-          </button>
-        </Link>
-      </div>
+     
+     
       {/*  Family Tour end  */}
       {/*  Corporate Tour start  */}
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto flex items-center md:flex-row flex-col">
           <div className="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
-            <h2 className="text-xs text-logoSun tracking-widest font-medium title-font mb-1">
-              Browse Our Best
-            </h2>
-            <h1 className="md:text-4xl text-3xl font-medium title-font ">
-              Corporate Tour
+          <h1 className="md:text-4xl text-3xl font-medium title-font ">
+                <span className="font-bold text-logoSun">Hajj / Umrah</span>  packages
             </h1>
           </div>
         </div>
@@ -200,16 +169,16 @@ const Index = () => {
         <Card /> */}
 
         {data
-          .filter((e) => JSON.parse(e.catagory).indexOf("corporate") !== -1)
+          .filter((e) => JSON.parse(e.catagory).indexOf("hajj") !== -1)
           .splice(0, 6)
           .map((e, i) => {
             return <Card key={i} data={e} />;
           })}
       </section>
       <div className="w-full py-4 text-center mb-5">
-        <Link href={`/Tour/more/corporate`}>
+        <Link href={`/Tour/more/hajj`}>
           <button className="btn-secondary btn-outline btn">
-            See More Corporate Tour
+            See More package
           </button>
         </Link>
       </div>
