@@ -1,17 +1,17 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Layout from "../../components/Layout";
 import Form from "../../components/resortForm/Form";
-
+import Link from "next/link";
 
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 const Index = () => {
-  const [form,setform] = useState();
+  const [form, setform] = useState();
   const [index, setIndex] = React.useState(-1);
   return (
     <Layout>
-          <Lightbox
+      <Lightbox
         open={index >= 0}
         index={index}
         close={() => setIndex(-1)}
@@ -27,9 +27,7 @@ const Index = () => {
         ]}
       />
       <div className="w-full flex justify-center flex-col items-center pt-40 pb-14">
-        {
-          form?<Form form={form} close={setform}/>:""
-        }
+        {form ? <Form form={form} close={setform} /> : ""}
         <p className="relative -left-[90px] md:-left-[320px] text-logoSun">
           Our own Resorts
         </p>
@@ -43,16 +41,26 @@ const Index = () => {
         {/* description  */}
         <div className="text-justify font-light">
           <p>
-          <p>Sailor Moon Resorts, Saint Martin is situated at West Sea-Beach Konarpara, Saint Martin, Cox&#39;s Bazar, Bangladesh. We own this resort since 2022. Sailor Moon Resorts one of the finest resort in Saint Martin. With the varity of services Sailor Moon Resort try to provide the best value for money service to there customer. 100% Customer Satisfactory obtaining is our main goal.&nbsp;</p>
-
+            <p>
+              Sailor Moon Resorts, Saint Martin is situated at West Sea-Beach
+              Konarpara, Saint Martin, Cox&#39;s Bazar, Bangladesh. We own this
+              resort since 2022. Sailor Moon Resorts one of the finest resort in
+              Saint Martin. With the varity of services Sailor Moon Resort try
+              to provide the best value for money service to there customer.
+              100% Customer Satisfactory obtaining is our main goal.&nbsp;
+            </p>
           </p>
         </div>
         {/* b photo  */}
         <div className="mt-10">
-          <div>
-            
-          </div>
-          <img onClick={()=>{setIndex(0)}} src="/img/sailor/sunholiday-w.jpg" alt="" />
+          <div></div>
+          <img
+            onClick={() => {
+              setIndex(0);
+            }}
+            src="/img/sailor/sunholiday-w.jpg"
+            alt=""
+          />
         </div>
 
         {/* gelary  */}
@@ -64,14 +72,21 @@ const Index = () => {
                 experience
               </h1>
               <p className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base text-justify">
-              Welcome to Sailor Moon Resort,Saint Martin where enchantment meets relaxation! Situated on the stunning shores of a pristine beach, our resort offers a captivating blend of beachfront beauty, exceptional dining experiences, and inviting facilities. Prepare to embark on a seaside retreat that will leave you feeling rejuvenated and spellbound.
+                Welcome to Sailor Moon Resort,Saint Martin where enchantment
+                meets relaxation! Situated on the stunning shores of a pristine
+                beach, our resort offers a captivating blend of beachfront
+                beauty, exceptional dining experiences, and inviting facilities.
+                Prepare to embark on a seaside retreat that will leave you
+                feeling rejuvenated and spellbound.
               </p>
             </div>
             <div className="flex flex-wrap flex-col md:flex-row  md:-m-2 -m-1">
               <div className="flex flex-wrap md:w-1/2">
                 <div className="md:p-2 p-1 w-1/2">
                   <img
-                  onClick={()=>{setIndex(1)}}
+                    onClick={() => {
+                      setIndex(1);
+                    }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
                     src="/img/sailor/sailor_ (16).jpg"
@@ -79,7 +94,9 @@ const Index = () => {
                 </div>
                 <div className="md:p-2 p-1 w-1/2">
                   <img
-                  onClick={()=>{setIndex(2)}}
+                    onClick={() => {
+                      setIndex(2);
+                    }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
                     src="/img/sailor/sailor_ (2).jpg"
@@ -87,7 +104,9 @@ const Index = () => {
                 </div>
                 <div className="md:p-2 p-1 w-full">
                   <img
-                  onClick={()=>{setIndex(3)}}
+                    onClick={() => {
+                      setIndex(3);
+                    }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full h-full object-cover object-center block"
                     src="/img/sailor/sailor_ (17).jpg"
@@ -97,7 +116,9 @@ const Index = () => {
               <div className="flex flex-wrap md:w-1/2">
                 <div className="md:p-2 p-1 w-full">
                   <img
-                  onClick={()=>{setIndex(4)}}
+                    onClick={() => {
+                      setIndex(4);
+                    }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full h-full object-cover object-center block"
                     src="/img/sailor/sailor_-(30).jpg"
@@ -105,7 +126,9 @@ const Index = () => {
                 </div>
                 <div className="md:p-2 p-1 w-1/2">
                   <img
-                  onClick={()=>{setIndex(5)}}
+                    onClick={() => {
+                      setIndex(5);
+                    }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
                     src="/img/sailor/sailor_ (21).jpg"
@@ -113,7 +136,9 @@ const Index = () => {
                 </div>
                 <div className="md:p-2 p-1 w-1/2">
                   <img
-                  onClick={()=>{setIndex(6)}}
+                    onClick={() => {
+                      setIndex(6);
+                    }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
                     src="/img/sailor/SHA_6251.JPG"
@@ -123,6 +148,11 @@ const Index = () => {
             </div>
           </div>
         </section>
+        <div className="w-full relative flex justify-center items-center">
+          <Link href="/gallery" className="btn btn-secondary btn-lg">
+            Gallery
+          </Link>
+        </div>
 
         {/* future  */}
         <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -171,11 +201,12 @@ const Index = () => {
                         />
                       </svg>
                     </div>
-                    <h6 className="mb-2 font-semibold leading-5">
-                    Dining
-                    </h6>
+                    <h6 className="mb-2 font-semibold leading-5">Dining</h6>
                     <p className="text-sm text-gray-900 text-justify">
-                    The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar offers a diverse and tantalizing dining experience, featuring an array of delectable cuisines picturesque dining settings overlooking the stunning beach. 
+                      The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar
+                      offers a diverse and tantalizing dining experience,
+                      featuring an array of delectable cuisines picturesque
+                      dining settings overlooking the stunning beach.
                     </p>
                   </div>
                 </div>
@@ -195,11 +226,37 @@ const Index = () => {
                       />
                     </svg>
                   </div>
-                  <h6 className="mb-2 font-semibold leading-5">
-                  BBQ & Party
-                  </h6>
+                  <h6 className="mb-2 font-semibold leading-5">BBQ & Party</h6>
                   <p className="text-sm text-gray-900 text-justify">
-                  The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar offers an enticing BBQ and party experience, providing guests with delectable grilled delights and a vibrant atmosphere, creating memorable moments for gatherings and celebrations.
+                    The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar
+                    offers an enticing BBQ and party experience, providing
+                    guests with delectable grilled delights and a vibrant
+                    atmosphere, creating memorable moments for gatherings and
+                    celebrations.
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-teal-accent-400">
+                    <svg
+                      className="w-8 h-8 text-teal-900"
+                      stroke="currentColor"
+                      viewBox="0 0 52 52"
+                    >
+                      <polygon
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"
+                      />
+                    </svg>
+                  </div>
+                  <h6 className="mb-2 font-semibold leading-5">Resting Area</h6>
+                  <p className="text-sm text-gray-900 text-justify">
+                    The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar
+                    offers a calm and pleasant resting space where visitors may
+                    unwind and relax while taking in the spectacular views of
+                    the coastline.
                   </p>
                 </div>
                 <div>
@@ -219,39 +276,21 @@ const Index = () => {
                     </svg>
                   </div>
                   <h6 className="mb-2 font-semibold leading-5">
-                  Resting Area
+                    Beach Activities
                   </h6>
                   <p className="text-sm text-gray-900 text-justify">
-                  The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar offers a calm and pleasant resting space where visitors may unwind and relax while taking in the spectacular views of the coastline.
-                  </p>
-                </div>
-                <div>
-                  <div className="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-teal-accent-400">
-                    <svg
-                      className="w-8 h-8 text-teal-900"
-                      stroke="currentColor"
-                      viewBox="0 0 52 52"
-                    >
-                      <polygon
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        fill="none"
-                        points="29 13 14 29 25 29 23 39 38 23 27 23"
-                      />
-                    </svg>
-                  </div>
-                  <h6 className="mb-2 font-semibold leading-5">
-                  Beach Activities
-                  </h6>
-                  <p className="text-sm text-gray-900 text-justify">
-                  The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar offers a plethora of beach activities, including sunbathing, swimming, beach volleyball ensuring a fun-filled and rejuvenating experience for all guests.
+                    The Sailor Moon Resort, Saint Martin in Cox&apos;s Bazar
+                    offers a plethora of beach activities, including sunbathing,
+                    swimming, beach volleyball ensuring a fun-filled and
+                    rejuvenating experience for all guests.
                   </p>
                 </div>
               </div>
               <div>
                 <img
-                onClick={()=>{setIndex(7)}}
+                  onClick={() => {
+                    setIndex(7);
+                  }}
                   className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg object-cover w-full h-56 rounded  sm:h-96"
                   src="/img/sailor/SHA_6244 copy.jpg"
                   alt=""
@@ -309,9 +348,10 @@ const Index = () => {
                 </div>
               </div>
               <div>
-                <a 
-                onClick={()=>setform("Couple Room")}
-                className="inline-flex items-center cursor-pointer justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
+                <a
+                  onClick={() => setform("Couple Room")}
+                  className="inline-flex items-center cursor-pointer justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none"
+                >
                   Book Now
                 </a>
                 <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
@@ -338,7 +378,10 @@ const Index = () => {
                 </div>
               </div>
               <div>
-                <a onClick={()=>setform("Double Room")} className="inline-flex cursor-pointer items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
+                <a
+                  onClick={() => setform("Double Room")}
+                  className="inline-flex cursor-pointer items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none"
+                >
                   Book Now
                 </a>
                 <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
@@ -361,7 +404,12 @@ const Index = () => {
                 </div>
               </div>
               <div>
-                <a onClick={()=>{setform("Full Resort")}} className="inline-flex cursor-pointer items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">
+                <a
+                  onClick={() => {
+                    setform("Full Resort");
+                  }}
+                  className="inline-flex cursor-pointer items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-logoBlue/20 rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none"
+                >
                   Book Now
                 </a>
                 <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
