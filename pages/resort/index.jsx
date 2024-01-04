@@ -422,6 +422,16 @@ const Index = () => {
               <p>*condition apply</p>
             </div>
           </div>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.0279923795983!2d92.3152691!3d20.627715800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30ae2338fae2ad89%3A0xa6b3c8a496a37429!2z4Ka44KeH4KaH4Kay4KawIOCmruCngeCmqCDgprDgpr_gprjgp4vgprDgp43gpp8!5e0!3m2!1sbn!2sbd!4v1704351289667!5m2!1sbn!2sbd"
+              width="100%"
+              height="300"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </div>
     </Layout>
