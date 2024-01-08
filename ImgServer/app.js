@@ -2,8 +2,8 @@
 const express = require("express");
 const fs = require("fs");
 const bodyParser = require("body-parser");
-const fsPromises = require('fs/promises');
-const path = require('path');
+const fsPromises = require("fs/promises");
+const path = require("path");
 require("dotenv").config();
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
@@ -39,8 +39,6 @@ const upload = multer({
   storage: storage,
 });
 
-
-
 const authAdmin = async (req, res, next) => {
   let cart = req.header("cc");
   try {
@@ -70,7 +68,6 @@ const auth = (req, res, next) => {
 
 function uploadFiles(req, res) {
   try {
-   
     res.status(200).json({
       status: "success",
       name: req.files,
@@ -96,63 +93,64 @@ function uploadFile(req, res) {
   }
 }
 
-// delete function 
-async function deletefun(req,res){
+// delete function
+async function deletefun(req, res) {
   const list = JSON.parse(req.body.list);
-  const deletedList  =  [];
+  const deletedList = [];
   const errChack = [];
 
- for (let index = 0; index < list.length; index++) {
-  const element = list[index];
-  try {
-    await fsPromises.unlink(path.join(__dirname,"public","upload",element));
-    deletedList.push(element);
-  } catch (err) {
-    errChack.post(err);
+  for (let index = 0; index < list.length; index++) {
+    const element = list[index];
+    try {
+      await fsPromises.unlink(
+        path.join(__dirname, "public", "upload", element)
+      );
+      deletedList.push(element);
+    } catch (err) {
+      errChack.post(err);
+    }
   }
- }
- if(errChack.length){
-  res.status(202).send({
-    err:errChack,
-    list:deletedList,
-  })
- }else{
-  res.status(200).send({msg:"ok all deleted"})
- }
-
-
+  if (errChack.length) {
+    res.status(202).send({
+      err: errChack,
+      list: deletedList,
+    });
+  } else {
+    res.status(200).send({ msg: "ok all deleted" });
+  }
 }
-
 
 ///////mailere function/////
 const nodemailer = require("nodemailer");
-const mail = async (req,res)=>{
-  console.log("mail")
-  if(!req.body.website){
-    return res.status(404).send("not found  !")
+const mail = async (req, res) => {
+  console.log("mail");
+  if (!req.body.website) {
+    return res.status(404).send("not found  !");
   }
-        try {
-           // create reusable transporter object using the default SMTP transport
-            let transporter = nodemailer.createTransport({
-              host: "sunholidaysltd.com",
-              port: 465,
-              tls: {
-                rejectUnauthorized:false
-            },
-              secure: true, // true for 465, false for other ports
-              auth: {
-                user: "info@sunholidaysltd.com", // generated ethereal user
-                pass: "Sun@0118", // generated ethereal password
-              },
-            });
+  try {
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+      host: "sunholidaysltd.com",
+      port: 465,
+      tls: {
+        rejectUnauthorized: false,
+      },
+      secure: true, // true for 465, false for other ports
+      auth: {
+        user: "info@sunholidaysltd.com", // generated ethereal user
+        pass: "sunholidays7890", // generated ethereal password
+      },
+    });
 
-              // send mail with defined transport object
-          let info = await transporter.sendMail({
-            from:"info@sunholidaysltd.com",//, // sender address
-            to: "sunholidays07@gmail.com", // list of receivers
-            subject: `mail from : ${req.body.website}, by:${req.body.mail?req.body.mail:"no mail provided!"}`, // Subject line
-            text: "pleass see html preview", // plain text body
-            html: `
+    // send mail with defined transport object
+    let info = await transporter.sendMail({
+      from: "info@sunholidaysltd.com", //, // sender address
+      to: "sunholidays07@gmail.com", // list of receivers
+      subject: `mail from : ${req.body.website}, by:${
+        req.body.mail ? req.body.mail : "no mail provided!"
+      }`, // Subject line
+      text: "pleass see html preview", // plain text body
+      html: `
             <div style="font-family: sans-serif; width: 100%; overflow: hidden">
       <div class="titel">
         <h1
@@ -192,7 +190,7 @@ const mail = async (req,res)=>{
             <td
               style="padding: 5px; font-size: 17px; text-transform: capitalize"
             >
-              ${req.body.name?req.body.name:"no name provided!"}
+              ${req.body.name ? req.body.name : "no name provided!"}
             </td>
           </tr>
           <tr>
@@ -204,7 +202,7 @@ const mail = async (req,res)=>{
             <td
               style="padding: 5px; font-size: 17px; text-transform: capitalize"
             >
-            ${req.body.phone?req.body.phone:"no phone provided!"}
+            ${req.body.phone ? req.body.phone : "no phone provided!"}
             </td>
           </tr>
           <tr>
@@ -216,7 +214,7 @@ const mail = async (req,res)=>{
             <td
               style="padding: 5px; font-size: 17px; text-transform: capitalize"
             >
-            ${req.body.mail?req.body.mail:"no mail provided!"}
+            ${req.body.mail ? req.body.mail : "no mail provided!"}
             </td>
           </tr>
         </table>
@@ -243,7 +241,7 @@ const mail = async (req,res)=>{
           "
         >
           <p>
-            ${req.body.msg?req.body.msg:"no massage provide !"}
+            ${req.body.msg ? req.body.msg : "no massage provide !"}
           </p>
         </div>
       </div>
@@ -255,19 +253,17 @@ const mail = async (req,res)=>{
     </div>
             
             `, // html body
-          });
+    });
 
+    console.log("Message sent: %s", info.messageId);
+    res.send("ok");
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("wong");
+  }
+};
 
-          console.log("Message sent: %s", info.messageId);
-          res.send("ok")
-        } catch (error) {
-          console.log(error)
-          res.status(500).send("wong")
-        }
-}
-
-
-// // delete function 
+// // delete function
 // async function deletefun(req,res){
 //   const list = JSON.parse(req.body.list);
 //   const deletedList  =  [];
@@ -291,20 +287,14 @@ const mail = async (req,res)=>{
 //   res.status(200).send({msg:"ok all deleted"})
 //  }
 
-
 // }
-
-
 
 //  route   //
 app.post("/upload", authAdmin, auth, upload.single("photo"), uploadFile);
 app.post("/uploads", authAdmin, upload.array("photos"), uploadFiles);
-app.post("/delete",authAdmin,deletefun);
-app.post("/mailto",mail)
+app.post("/delete", authAdmin, deletefun);
+app.post("/mailto", mail);
 // app.post("/delete",authAdmin,deletefun);
-
-
-
 
 app.listen(5000, () => {
   console.log(`Server started...`);

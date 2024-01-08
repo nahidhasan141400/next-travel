@@ -33,7 +33,7 @@ const Form = ({ close, form }) => {
             ${fname} Book ${form}
           </h1>
           <h1 style="text-align:center; padding:4px;">
-            Check-in Date : ${date} 
+            Check-in Date : ${Date} 
           </h1>
 
           <p>Package: ${form}</p>

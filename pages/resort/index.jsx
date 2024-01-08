@@ -17,13 +17,16 @@ const Index = () => {
         close={() => setIndex(-1)}
         slides={[
           { src: "/img/sailor/sunholiday-w.jpg" },
-          { src: "/img/sailor/sailor_ (16).jpg" },
-          { src: "/img/sailor/sailor_ (2).jpg" },
-          { src: "/img/sailor/sailor_ (17).jpg" },
-          { src: "/img/sailor/sailor_-(30).jpg" },
-          { src: "/img/sailor/sailor_ (21).jpg" },
-          { src: "/img/sailor/SHA_6251.JPG" },
-          { src: "/img/sailor/SHA_6244 copy.jpg" },
+          { src: "/img/sailor/Sailor (1).jpg" },
+          { src: "/img/sailor/Sailor (2).jpg" },
+          { src: "/img/sailor/Sailor (3).jpg" },
+          { src: "/img/sailor/Sailor (4).jpg" },
+          { src: "/img/sailor/Sailor (5).jpg" },
+          { src: "/img/sailor/Sailor (6).jpg" },
+          { src: "/img/sailor/Sailor (7).jpg" },
+          { src: "/img/sailor/Sailor (8).jpg" },
+          { src: "/img/sailor/Sailor (9).jpg" },
+          { src: "/img/sailor/Sailor (10).jpg" },
         ]}
       />
       <div className="w-full flex justify-center flex-col items-center pt-40 pb-14">
@@ -89,7 +92,7 @@ const Index = () => {
                     }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
-                    src="/img/sailor/sailor_ (16).jpg"
+                    src="/img/sailor/Sailor (1).jpg"
                   />
                 </div>
                 <div className="md:p-2 p-1 w-1/2">
@@ -99,7 +102,7 @@ const Index = () => {
                     }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
-                    src="/img/sailor/sailor_ (2).jpg"
+                    src="/img/sailor/Sailor (2).jpg"
                   />
                 </div>
                 <div className="md:p-2 p-1 w-full">
@@ -109,7 +112,7 @@ const Index = () => {
                     }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full h-full object-cover object-center block"
-                    src="/img/sailor/sailor_ (17).jpg"
+                    src="/img/sailor/Sailor (3).jpg"
                   />
                 </div>
               </div>
@@ -121,7 +124,7 @@ const Index = () => {
                     }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full h-full object-cover object-center block"
-                    src="/img/sailor/sailor_-(30).jpg"
+                    src="/img/sailor/Sailor (4).jpg"
                   />
                 </div>
                 <div className="md:p-2 p-1 w-1/2">
@@ -131,7 +134,7 @@ const Index = () => {
                     }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
-                    src="/img/sailor/sailor_ (21).jpg"
+                    src="/img/sailor/Sailor (5).jpg"
                   />
                 </div>
                 <div className="md:p-2 p-1 w-1/2">
@@ -141,15 +144,67 @@ const Index = () => {
                     }}
                     alt="gallery"
                     className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
-                    src="/img/sailor/SHA_6251.JPG"
+                    src="/img/sailor/Sailor (6).jpg"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-wrap md:w-full col-span-4">
+                {/* nahid */}
+                <div className="md:p-2 p-1 w-1/2 md:w-1/4">
+                  <img
+                    onClick={() => {
+                      setIndex(7);
+                    }}
+                    alt="gallery"
+                    className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
+                    src="/img/sailor/Sailor (7).jpg"
+                  />
+                </div>
+
+                {/* nahid */}
+                <div className="md:p-2 p-1 w-1/2 md:w-1/4">
+                  <img
+                    onClick={() => {
+                      setIndex(8);
+                    }}
+                    alt="gallery"
+                    className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
+                    src="/img/sailor/Sailor (8).jpg"
+                  />
+                </div>
+
+                {/* nahid */}
+                <div className="md:p-2 p-1 w-1/2 md:w-1/4">
+                  <img
+                    onClick={() => {
+                      setIndex(9);
+                    }}
+                    alt="gallery"
+                    className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
+                    src="/img/sailor/Sailor (9).jpg"
+                  />
+                </div>
+
+                {/* nahid */}
+                <div className="md:p-2 p-1 w-1/2 md:w-1/4">
+                  <img
+                    onClick={() => {
+                      setIndex(10);
+                    }}
+                    alt="gallery"
+                    className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
+                    src="/img/sailor/Sailor (10).jpg"
                   />
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <div className="w-full relative flex justify-center items-center">
-          <Link href="/gallery" className="btn btn-secondary btn-lg">
+        <div className="w-full relative flex justify-center">
+          <Link
+            href="/gallery"
+            className="rounded-md w-full mx-auto max-w-xl text-center relative bg-gradient-to-tr to-logoBlue from-logoRay py-4 mt-2 px-8 text-neutral-50 font-bold sm:text-xl md:text-3xl  border-none  hover:scale-95"
+          >
             Gallery
           </Link>
         </div>
@@ -289,10 +344,10 @@ const Index = () => {
               <div>
                 <img
                   onClick={() => {
-                    setIndex(7);
+                    setIndex(10);
                   }}
                   className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg object-cover w-full h-56 rounded  sm:h-96"
-                  src="/img/sailor/SHA_6244 copy.jpg"
+                  src="/img/sailor/Sailor (10).jpg"
                   alt=""
                 />
               </div>
