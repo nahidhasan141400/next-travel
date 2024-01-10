@@ -29,9 +29,9 @@ const Index = () => {
           { src: "/img/sailor/Sailor (10).jpg" },
         ]}
       />
-      <div className="w-full flex justify-center flex-col items-center pt-40 pb-14">
+      <div className="w-full flex justify-center flex-col items-center pt-32 md:pt-40 pb-9 md:pb-14">
         {form ? <Form form={form} close={setform} /> : ""}
-        <p className="relative -left-[90px] md:-left-[320px] text-logoSun">
+        <p className="relative -left-[90px] md:-left-[400px] text-logoSun">
           Our own Resorts
         </p>
         <h1 className="text-2xl font-bold text-center md:text-left md:text-5xl">
@@ -40,7 +40,7 @@ const Index = () => {
         <p className="md:text-2xl text-xl font-thin">Cox-Bazar,Bangladesh</p>
       </div>
       {/* main  */}
-      <div className="w-full px-4 max-w-7xl mx-auto">
+      <div className="w-full px-2 max-w-7xl mx-auto">
         {/* description  */}
         <div className="text-justify font-light">
           <p>
@@ -55,7 +55,7 @@ const Index = () => {
           </p>
         </div>
         {/* b photo  */}
-        <div className="mt-10">
+        <div className="mt-5 md:mt-10">
           <div></div>
           <img
             onClick={() => {
@@ -63,6 +63,37 @@ const Index = () => {
             }}
             src="/img/sailor/sunholiday-w.jpg"
             alt=""
+          />
+        </div>
+        {/* phone 3 photo  */}
+        <div className="w-full relative grid grid-cols-3 mt-2 gap-2  md:hidden">
+          <img
+            onClick={() => {
+              setIndex(7);
+            }}
+            alt="gallery"
+            className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
+            src="/img/sailor/Sailor (7).jpg"
+          />
+
+          {/* iamge 2 */}
+
+          <img
+            onClick={() => {
+              setIndex(6);
+            }}
+            alt="gallery"
+            className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full object-cover h-full object-center block"
+            src="/img/sailor/Sailor (6).jpg"
+          />
+          {/* image 3  */}
+          <img
+            onClick={() => {
+              setIndex(4);
+            }}
+            alt="gallery"
+            className="hover:scale-105 ease-linear transition-all shadow-md hover:shadow-lg w-full h-full object-cover object-center block"
+            src="/img/sailor/Sailor (4).jpg"
           />
         </div>
 

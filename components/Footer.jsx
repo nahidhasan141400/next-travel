@@ -81,6 +81,15 @@ const Footer = () => {
             </span>{" "}
             +88 018 73 83 83 01
           </a>
+          <a
+            href="tel:8801873838302"
+            className="flex font-bold bg-gradient-to-tr from-logoBlue to-logoSun bg-clip-text hover:text-transparent text-2xl"
+          >
+            <span className="text-logoBlue relative top-1 pr-1">
+              <IoMdCall />
+            </span>{" "}
+            +88 018 73 83 83 02
+          </a>
         </div>
         <div>
           <span className="footer-title capitalize text-3xl">Information</span>
