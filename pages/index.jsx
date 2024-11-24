@@ -8,28 +8,30 @@ import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 import PopulerT from "../components/PopulerT";
 import WhyYCU from "../components/WhyYCU";
-import HomeRes from "../components/homeres/HomeRes"
-import Dental from '../components/DENTAL/Dental';
-import Haz from "../components/haz&omrah/Haz"
+import HomeRes from "../components/homeres/HomeRes";
+import Dental from "../components/DENTAL/Dental";
+import Haz from "../components/haz&omrah/Haz";
+import HotelCard from "@/components/HotelCard/HotelCard";
 const index = () => {
   return (
     <div>
       <Layout>
-        <Hero/>
+        <Hero />
         {/* <Category/> */}
-        <AccseesPatner/>
-        <Haz/>
-        <HomeRes/>
-        <WhyYCU/>
-        <BookPross/>
-        <Dental/>
+        <AccseesPatner />
+        <HotelCard />
+        <Haz />
+        <HomeRes />
+        <WhyYCU />
+        <BookPross />
+        <Dental />
         {/* <BusnesStat/> */}
-        <PopulerT/>
+        <PopulerT />
         {/* <Discount/> */}
-        <Affiliate/>  
+        <Affiliate />
       </Layout>
     </div>
-  )
-}
+  );
+};
 
-export default index 
+export default index;
